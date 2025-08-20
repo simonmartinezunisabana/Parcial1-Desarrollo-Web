@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyería Elegance - Producto</title>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-left">
+        <!-- Botón catálogo con menú desplegable -->
+        <div class="catalogo-dropdown">
+          <button id="catalogo-btn"><i class="fas fa-bars"></i></button>
+          <div class="catalogo-menu">
+            <a href="categorias/anillos.html">Anillos</a>
+            <a href="categorias/collares.html">Collares</a>
+            <a href="categorias/pulseras.html">Pulseras</a>
+            <a href="categorias/dijes.html">Dijes</a>
+            <a href="categorias/cadenas.html"></a>
+            <a href="categorias/brazaletes.html"></a>
+            <a href="categorias/argollas.html"></a>
+            <a href="categorias/aretes.html"></a>
+          </div>
+        </div>
+        <!-- Lupa -->
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Logo en el centro -->
+    <div class="header-center">
+        <a href="index.html"><img src="assets/img/logo.png" alt="Joyería Logo" class="logo"></a>
+    </div>
+
+    <!-- Carrito a la derecha -->
+    <div class="header-right">
+        <button id="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <!-- ===== DETALLE DEL PRODUCTO ===== -->
+  <main class="producto-detalle">
+    <div class="producto-imagen">
+      <img src="../assets/img/prod1.jpg" alt="Anillo oro blanco">
+    </div>
+    <div class="producto-info">
+      <h1>Anillo de Oro Blanco</h1>
+      <p class="precio">$2,500</p>
+      <p class="descripcion">
+        Anillo de oro blanco de 18k con incrustaciones de diamantes pequeños. 
+        Una pieza elegante y atemporal, ideal para compromiso o regalo especial.
+      </p>
+
+      <!-- Opciones -->
+      <div class="producto-opciones">
+        <label for="talla">Talla:</label>
+        <select id="talla" name="talla">
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+      </div>
+
+      <!-- Botones -->
+      <div class="producto-botones">
+        <button class="btn btn-carrito">Añadir al carrito</button>
+        <button class="btn btn-comprar">Comprar ahora</button>
+      </div>
+    </div>
+  </main>
+
+      <!-- ===== ACORDEÓN DETALLES ===== -->
+      <div class="producto-detalles">
+        <div class="acordeon-item">
+          <button class="acordeon-titulo">Descripción</button>
+          <div class="acordeon-contenido">
+            <p>
+              Este anillo de oro blanco de 18k está cuidadosamente diseñado con
+              incrustaciones de diamantes pequeños. Combina elegancia y durabilidad
+              para acompañarte en los momentos más importantes.
+            </p>
+          </div>
+        </div>
+
+        <div class="acordeon-item">
+          <button class="acordeon-titulo">Garantía</button>
+          <div class="acordeon-contenido">
+            <p>
+              Todas nuestras joyas cuentan con <strong>garantía de 1 año</strong> contra
+              defectos de fabricación. No cubre daños por uso indebido.
+            </p>
+          </div>
+        </div>
+
+        <div class="acordeon-item">
+          <button class="acordeon-titulo">Cuidado de la Joya</button>
+          <div class="acordeon-contenido">
+            <p>
+              Para conservar el brillo de tu joya evita el contacto con químicos,
+              perfumes y agua salada. Se recomienda limpiar con un paño suave y
+              guardar en estuche individual.
+            </p>
+          </div>
+        </div>
+
+        <div class="acordeon-item">
+          <button class="acordeon-titulo">Envíos</button>
+          <div class="acordeon-contenido">
+            <p>
+              Realizamos envíos a nivel nacional en un plazo de <strong>2 a 5 días hábiles</strong>.
+              Todas las piezas se entregan en empaque de lujo y con certificado de autenticidad.
+            </p>
+          </div>
+        </div>
+      </div>
+
+  
+
+  <!-- ===== PRODUCTOS RELACIONADOS ===== -->
+  <section class="productos-relacionados">
+    <h2>También te puede interesar</h2>
+    <div class="relacionados-grid">
+      <a href="producto.html" class="producto-card">
+        <img src="../assets/img/prod2.jpg" alt="Collar con esmeralda">
+        <h4>Collar con esmeralda</h4>
+        <p>$3,800</p>
+      </a>
+      <a href="producto.html" class="producto-card">
+        <img src="../assets/img/prod3.jpg" alt="Pulsera de plata">
+        <h4>Pulsera de plata</h4>
+        <p>$950</p>
+      </a>
+      <a href="producto.html" class="producto-card">
+        <img src="../assets/img/prod4.jpg" alt="Dije corazón">
+        <h4>Dije corazón</h4>
+        <p>$1,200</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-info">
+      <div>
+        <h4>Contacto</h4>
+        <p>Tel: +57 300 123 4567</p>
+        <p>Email: contacto@joyeriaelegance.com</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes - Viernes: 9:00 - 18:00</p>
+        <p>Sábado: 10:00 - 16:00</p>
+        <p>Domingo: Cerrado</p>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Joyería Elegance - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

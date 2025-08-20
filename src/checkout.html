@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyería Elegance - Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-left">
+      <a href="carrito.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><img src="../assets/img/logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="header-right"></div>
+  </header>
+
+  <!-- ===== CHECKOUT ===== -->
+  <main class="checkout">
+    <h1>Finalizar Compra</h1>
+
+    <!-- Datos del cliente -->
+    <section class="checkout-form">
+      <h2>Información de Envío</h2>
+      <form>
+        <label>Nombre completo</label>
+        <input type="text" required>
+
+        <label>Correo electrónico</label>
+        <input type="email" required>
+
+        <label>Teléfono</label>
+        <input type="tel" required>
+
+        <label>Dirección</label>
+        <input type="text" required>
+
+        <label>Ciudad</label>
+        <input type="text" required>
+
+        <label>Código Postal</label>
+        <input type="text" required>
+      </form>
+    </section>
+
+    <!-- Métodos de pago -->
+    <section class="checkout-pago">
+      <h2>Método de Pago</h2>
+      <label>
+        <input type="radio" name="pago" checked> Tarjeta de Crédito/Débito
+      </label>
+      <label>
+        <input type="radio" name="pago"> Transferencia Bancaria
+      </label>
+      <label>
+        <input type="radio" name="pago"> Contraentrega
+      </label>
+    </section>
+
+    <!-- Resumen -->
+    <section class="checkout-resumen">
+      <h2>Resumen de Compra</h2>
+      <div class="resumen-item">
+        <p>Anillo de Oro Blanco</p><span>$2,500</span>
+      </div>
+      <div class="resumen-item">
+        <p>Pulsera de Plata x2</p><span>$1,900</span>
+      </div>
+      <div class="resumen-total">
+        <strong>Total:</strong><span>$4,400</span>
+      </div>
+      <button class="btn btn-comprar">Confirmar Pedido</button>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Joyería Elegance - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
