@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body {
+  font-family: "Montserrat", sans-serif;
+  header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #catalogo-btn{
+    background: transparent;
+    border: 2px solid#333;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    font-size: 30px;
+  }
+  #catalogo-btn:active{
+    transform: rotate(360deg);
+  }
+  .header-center{
+    justify-self: center;
+  }
+  .header-right{
+    justify-self: flex-end;
+  }
+}
