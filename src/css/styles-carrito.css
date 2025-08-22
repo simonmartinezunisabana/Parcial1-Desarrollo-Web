@@ -1,5 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-body{
-    font-family: "Montserrat",sans-serif;
-    
+@import url('https://fonts.cdnfonts.com/css/realife-moment');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Realife Moment", sans-serif;
+  font-size: 150%;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: black;
+  height: 70px;
+  align-items: center;
+}
+
+.header-left {
+  font-size: 50px;
+  margin-left: 20px;
+  color: white;
+}
+
+.header-center {
+  justify-self: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.header-center img {
+  justify-self: center;
+  width: 40%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+main.carrito {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.carrito h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.carrito-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.carrito-item:hover {
+  transform: scale(1.01);
+}
+
+.carrito-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info h3 {
+  font-size: 1.2rem;
+}
+
+.item-info p {
+  color: #888;
+  margin: 0.3rem 0;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cantidad input {
+  width: 60px;
+  padding: 0.3rem;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #c00;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-eliminar:hover {
+  color: #900;
+}
+
+.carrito-total {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+.btn-comprar {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #000;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-comprar:hover {
+  background:#444;
+}
+footer {
+    background-color: #000;
+    color: white;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 1rem 0;
 }
