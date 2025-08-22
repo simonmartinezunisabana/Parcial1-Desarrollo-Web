@@ -395,7 +395,7 @@ const mapaProductos = {
     id: 49,
     nombre: "Anillo Lucia",
     precio: 4500,
-    imagen: "../images/Anillos/anillo-lucia.jpg",
+    imagen: "../images/Exclusivo/anillo-lucia.jpg",
     tipo: "Anillos",
     material: "Plata 925",
     descripcion: "Elegante anillo Lucia fabricado en plata 925 de alta calidad. Diseño delicado y femenino con detalles refinados que capturan la luz perfectamente. Perfecto para uso diario o ocasiones especiales, combinando versatilidad y elegancia con un precio accesible."
@@ -404,7 +404,7 @@ const mapaProductos = {
     id: 50,
     nombre: "Aretes Velvet",
     precio: 6800,
-    imagen: "../images/aretes-velvet.jpg",
+    imagen: "../images/Exclusivo/aretes-velvet.jpg",
     tipo: "Aretes",
     material: "Oro 18k",
     descripcion: "Exquisitos aretes Velvet en oro de 18k con diseño aterciopelado y acabado suave. Crean un efecto de luxe discreto que complementa cualquier outfit. Ideales para quienes buscan elegancia sofisticada con un toque moderno y contemporáneo."
@@ -413,7 +413,7 @@ const mapaProductos = {
     id: 51,
     nombre: "Dije Lumini",
     precio: 9200,
-    imagen: "../images/dije-lumini.jpg",
+    imagen: "../images/Exclusivo/dije-lumini.jpg",
     tipo: "Dijes",
     material: "Oro 18k",
     descripcion: "Deslumbrante dije Lumini en oro de 18k con diseño que captura y refleja la luz. Patrones geométricos que crean juegos de luminosidad y sombras. Pieza moderna que simboliza claridad y brillo interior, perfecta para personalidades radiantes y positivas."
@@ -422,7 +422,7 @@ const mapaProductos = {
     id: 52,
     nombre: "Pulsera Completa Placa",
     precio: 15500,
-    imagen: "../images/pulsera-completa-placa.jpg",
+    imagen: "../images/Exclusivo/pulsera-completa-placa.jpg",
     tipo: "Pulseras",
     material: "Oro 18k",
     descripcion: "Pulsera en oro de 18k con diseño de placa completa y sólida. Superficie lisa que ofrece máxima presencia en la muñeca con elegancia minimalista. Perfecta para quienes prefieren piezas sustanciales con impacto visual fuerte pero diseño limpio y sofisticado."
@@ -432,7 +432,7 @@ const mapaProductos = {
     id: 53,
     nombre: "Dije Corazón Caballo",
     precio: 11500,
-    imagen: "../images/dije-corazon-caballo.jpg",
+    imagen: "../images/Novedades/dije-corazon-caballo.jpg",
     tipo: "Dijes",
     material: "Oro 18k",
     descripcion: "Encantador dije en oro de 18k con diseño de corazón y figura equina. Simboliza el amor por estos nobles animales y la pasión ecuestre. Artesanía detallada que combina romanticismo y fuerza, perfecto para amantes de los caballos y la naturaleza."
@@ -441,7 +441,7 @@ const mapaProductos = {
     id: 54,
     nombre: "Dije Pegaso",
     precio: 12800,
-    imagen: "../images/dije-pegaso.jpg",
+    imagen: "../images/Novedades/dije-pegaso.jpg",
     tipo: "Dijes",
     material: "Oro 18k",
     descripcion: "Majestuoso dije en oro de 18k con la figura mitológica de Pegaso. Representa libertad, inspiración y grandeza. Elaborado con exquisito detalle en las alas y musculatura, creando una pieza de poderosa belleza para quienes buscan elevarse por encima de lo común."
@@ -450,7 +450,7 @@ const mapaProductos = {
     id: 55,
     nombre: "Dije Cruz Brillante",
     precio: 9500,
-    imagen: "../images/dije-cruz-brillante.jpg",
+    imagen: "../images/Novedades/dije-cruz-brillante.jpg",
     tipo: "Dijes",
     material: "Oro 18k",
     descripcion: "Deslumbrante dije en oro de 18k con diseño de cruz de corte brillante. Superficie pulida que refleja la luz intensamente, simbolizando fe y esperanza. Pieza espiritual con máximo brillo, ideal para quienes buscan una expresión de fe radiante y elegante."

@@ -75,9 +75,8 @@ main.checkout {
 
 /* ==== FORMULARIO ==== */
 .checkout-form form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkout-info-envio label {
@@ -148,13 +147,4 @@ main.checkout {
 }
 #btn-comprar:hover {
   background:#444;
-}
-footer {
-    background-color: #000;
-    color: white;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    padding: 1rem 0;
 }

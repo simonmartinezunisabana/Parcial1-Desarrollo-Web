@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joyería Elegance - Inicio</title>
   <link rel="stylesheet" href="../css/styles-header.css">
+  <link rel="stylesheet" href="../css/styles-footer.css">
   <link rel="stylesheet" href="../css/styles-index.css">
+  <script src="../scripts/index.js"></script>
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -16,7 +18,7 @@
           <button id="catalogo-btn"><i class="fas fa-bars"></i></button>
           <div class="catalogo-menu">
             <a href="PlantillaMain.html?tipo=Anillos">Anillos</a>
-            <a href="PlantillaMain.html?tipo=Collares">Collares</a>
+            <a href="PlantillaMain.html?tipo=Pulsos">Pulsos</a>
             <a href="PlantillaMain.html?tipo=Pulseras">Pulseras</a>
             <a href="PlantillaMain.html?tipo=Dijes">Dijes</a>
             <a href="PlantillaMain.html?tipo=Cadenas">Cadenas</a>
@@ -55,78 +57,97 @@
 
   <!-- ===== CATÁLOGO (SLIDER DE CATEGORÍAS) ===== -->
   <section class="catalogo-slider">
-    <h2>Nuestro Catálogo</h2>
-    <div class="catalogo-container">
-      <button id="go-left">←</button>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Anillo">
-          <img src="../images/Anillos/Anillo-Olimpus-Gemas-Negras.jpg" alt="Anillos">
-          <h3>Anillos</h3>
-        </a>
+      <h2>Nuestro Catálogo</h2>
+      <div class="catalogo-container">
+          <button class="catalogo-control prev" id="go-left">←</button>
+          
+          <div class="catalogo-carrusel">
+              <div class="catalogo-slides-container">
+                  <!-- Slide 1 -->
+                  <div class="catalogo-slide">
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Anillos">
+                              <img src="../images/Anillos/anillo-ares.jpg" alt="Anillos">
+                              <h3>Anillos</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Pulsos">
+                              <img src="../images/Pulsos/pulso-cuadrado.jpg" alt="Pulsos"> 
+                              <h3>Pulsos</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Pulseras">
+                              <img src="../images/Pulseras/pulsera-completo.jpg" alt="Pulseras">
+                              <h3>Pulseras</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Dijes">
+                              <img src="../images/Dijes/dije-cruz-imperial.jpg" alt="Dijes">
+                              <h3>Dijes</h3>
+                          </a>
+                      </div>
+                  </div>
+                  
+                  <!-- Slide 2 -->
+                  <div class="catalogo-slide">
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Cadenas">
+                              <img src="../images/Cadenas/cadena-ancla.jpg" alt="Cadenas">
+                              <h3>Cadenas</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Brazaletes">
+                              <img src="../images/Brazaletes/brazalete-calado.jpg" alt="Brazaletes"> 
+                              <h3>Brazaletes</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Argollas">
+                              <img src="../images/Argollas/argollas-amara.jpg" alt="Argollas">
+                              <h3>Argollas</h3>
+                          </a>
+                      </div>
+                      <div class="catalogo-card">
+                          <a href="PlantillaMain.html?tipo=Aretes">
+                              <img src="../images/Aretes/aretes-bella.jpg" alt="Aretes">
+                              <h3>Aretes</h3>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <button class="catalogo-control next" id="go-right">→</button>
       </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Pulsos">
-          <img src="../images/Pulsos/pulso-franco-2mm.jpg" alt="Pulsos"> 
-          <h3>Pulsos</h3>
-        </a>
+      
+      <!-- Indicadores -->
+      <div class="catalogo-indicadores">
+          <div class="indicador activo" data-slide="0"></div>
+          <div class="indicador" data-slide="1"></div>
       </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Pulseras">
-          <img src="../images/Pulseras/COMPLETA-4MM.jpg" alt="Pulseras">
-          <h3>Pulseras</h3>
-        </a>
-      </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Dijes">
-          <img src="../images/Dijes/cruz-imperial.jpg" alt="Dijes">
-          <h3>Dijes</h3>
-        </a>
-      </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Cadenas">
-          <img src="../images/Cadenas/CADENA-RUSTICA_65797b5c-2bcc-4301-9553-4cc9cda6981e.jpg" alt="Cadenas">
-          <h3>Cadenas</h3>
-        </a>
-      </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Brazaletes">
-          <img src="../images/Brazaletes/Brazalete-Calado-Oro-Laminado.jpg" alt="Brazaletes"> 
-          <h3>Brazaletes</h3>
-        </a>
-      </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Argollas">
-          <img src="../images/Argollas/ArgollasAura_1cab4198-e091-4516-a441-2dbf3e2b889f.jpg" alt="Argollas">
-          <h3>Argollas</h3>
-        </a>
-      </div>
-      <div class="catalogo-card">
-        <a href="PlantillaMain.html?tipo=Aretes">
-          <img src="../images/Aretes/Aretes-Gypsy.jpg" alt="Aretes">
-          <h3>Aretes</h3>
-        </a>
-      </div>
-      <button id="go-right">→</button>
-    </div>
   </section>
 
   <!-- ===== COLECCIONES DESTACADAS ===== -->
   <section class="colecciones">
     <h2>Colecciones destacadas</h2>
     <div class="colecciones-grid">
-      <a href="categorias/anillos.html" class="coleccion-card">
+      <a href="PlantillaMain.html?tipo=Anillos" class="coleccion-card">
         <img src="../images/Exclusivo/anillo-Lucia.jpg" alt="Anillos">
         <h3>Anillos</h3>
       </a>
-      <a href="categorias/collares.html" class="coleccion-card">
+      <a href="PlantillaMain.html?tipo=Collares" class="coleccion-card">
         <img src="../images/Exclusivo/Aretes-Velvet.jpg" alt="Aretes">
         <h3>Aretes</h3>
       </a>
-      <a href="categorias/pulseras.html" class="coleccion-card">
-        <img src="../images/Novedades/pulsera-completa-placa.jpg" alt="Pulseras">
+      <a href="PlantillaMain.html?tipo=Pulseras" class="coleccion-card">
+        <img src="../images/Exclusivo/pulsera-completa-placa.jpg" alt="Pulseras">
         <h3>Pulseras</h3>
       </a>
-      <a href="categorias/dijes.html" class="coleccion-card">
+      <a href="PlantillaMain.html?tipo=Dijes" class="coleccion-card">
         <img src="../images/Exclusivo/Dije-Lumini.jpg" alt="Dijes">
         <h3>Dijes</h3>
       </a>
@@ -138,22 +159,22 @@
     <h2>Novedades</h2>
     <div class="novedades-grid">
       <div class="producto-card">
-        <img src="../images/Novedades/Dije-Corazon-Caballo.jpg" alt="Anillo oro blanco">
-        <h4>Anillo oro blanco</h4>
-        <p>$2,500</p>
-        <a href="producto.html" class="btn">Ver más</a>
+        <img src="../images/Novedades/dije-corazon-caballo.jpg" alt="Anillo oro blanco">
+        <h4>Dije Corazon Caballo</h4>
+        <p>$11500</p>
+        <a href="PlantillaProducto.html?id=53" class="btn">Ver más</a>
       </div>
       <div class="producto-card">
-        <img src="../images/Novedades/Dije-Pegaso-Web.jpg" alt="Collar esmeralda">
-        <h4>Collar con esmeralda</h4>
-        <p>$3,800</p>
-        <a href="producto.html" class="btn">Ver más</a>
+        <img src="../images/Novedades/dije-pegaso.jpg" alt="Collar esmeralda">
+        <h4>Dije Pegaso</h4>
+        <p>$12800</p>
+        <a href="PlantillaProducto.html?id=54" class="btn">Ver más</a>
       </div>
       <div class="producto-card">
-        <img src="../images/Novedades/Fotos-Web-20200273.jpg" alt="Pulsera plata">
-        <h4>Pulsera de plata</h4>
-        <p>$950</p>
-        <a href="producto.html" class="btn">Ver más</a>
+        <img src="../images/Novedades/dije-cruz-brillante.jpg" alt="Pulsera plata">
+        <h4>Dije Cruz Brillante</h4>
+        <p>$9500</p>
+        <a href="PlantillaProducto.html?id=55" class="btn">Ver más</a>
       </div>
       
     </div>
@@ -166,7 +187,20 @@
       En Joyería Elegance creemos que cada pieza cuenta una historia. 
       Con más de 20 años de experiencia, ofrecemos calidad, tradición y exclusividad.
     </p>
-    <a href="sobre-nosotros.html" class="btn">Conoce más</a>
+    <div id="developers-imgs">
+      <div class="developer">
+        <img src="../images/Developers/simon.jpg" alt="Simón">
+        <h2>Simón Martínez</h2>
+      </div>
+      <div class="developer">
+        <img src="../images/Developers/tomas.jpg" alt="Tomás">
+        <h2>Tomás Trujillo</h2>
+      </div>
+      <div class="developer">
+        <img src="../images/Developers/alejandro.jpg" alt="Alejandro">
+        <h2>Alejandro Rincón</h2>
+      </div>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->

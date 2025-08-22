@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Realife Moment', sans-serif;
 }
 
 html, body {
@@ -14,7 +15,6 @@ html, body {
 }
 
 body {
-  font-family: "Realife Moment", sans-serif;
   font-size: 150%;
   letter-spacing: 1px;
   font-weight: bold;
@@ -51,11 +51,6 @@ main.carrito {
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.carrito-item:hover {
-  transform: scale(1.01);
 }
 
 .carrito-item img {
@@ -122,17 +117,10 @@ main.carrito {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 #btn-checkout:hover {
   background:#444;
-}
-footer {
-    background-color: #000;
-    color: white;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    padding: 1rem 0;
 }

@@ -7,22 +7,25 @@ window.onload = () => {
     function anadirProductoAVista(id){
         const infoProducto = mapaProductos[id];
         const producto = document.createElement("div");
+        producto.className = "producto";
+
+        const link = document.createElement("a");
+        link.href = "PlantillaProducto.html?id=" + infoProducto.id;
 
         const img = document.createElement("img");
         img.src = infoProducto.imagen;
         img.alt = infoProducto.nombre;
-        producto.appendChild(img);
+        link.appendChild(img);
 
-        const link = document.createElement("a");
-        link.href = "PlantillaProducto.html?id=" + infoProducto.id;
         const nombre = document.createElement("h3");
         nombre.innerText = infoProducto.nombre;
         link.appendChild(nombre);
-        producto.appendChild(link);
 
         const precio = document.createElement("p");
         precio.innerText = "$" + infoProducto.precio;
-        producto.appendChild(precio);
+        link.appendChild(precio)
+
+        producto.appendChild(link);
 
         productosGrid.appendChild(producto);
     }

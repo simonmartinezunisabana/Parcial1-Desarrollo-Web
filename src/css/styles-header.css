@@ -4,7 +4,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: black;
-  height: 70px;
+  height: 6rem;
   align-items: center;
 }
 .header-center{
@@ -14,7 +14,7 @@ header {
 }
 .header-center img {
   justify-self: center;
-  width: 40%;
+  width: 15rem;
   height: auto;
   display: block;
   object-fit: contain;

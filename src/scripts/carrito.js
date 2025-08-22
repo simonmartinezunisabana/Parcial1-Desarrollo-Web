@@ -57,6 +57,7 @@ window.onload = () => {
 
         const eliminar = document.createElement("button");
         eliminar.innerText = "Eliminar";
+        eliminar.className = "btn-eliminar"
         eliminar.addEventListener("click", () => {
             eliminarDelCarrito(id);
             carritoItem.remove();
@@ -98,6 +99,8 @@ window.onload = () => {
     document.getElementById("btn-checkout").addEventListener("click", () =>{
         if(totalCarrito > 0){
             window.location.href = "checkout.html";
+        }else{
+            alert('No hay artículos en el carrito.');
         }
     });
 }

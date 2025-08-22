@@ -65,43 +65,128 @@ button {
 
 /* Slider del Catálogo */
 .catalogo-slider {
-  margin: 20px;
-  margin-top: 40px;
-  text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
 }
+
 .catalogo-slider h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
 }
 
 .catalogo-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.catalogo-carrusel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.catalogo-slides-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.catalogo-slide {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-around;
+    min-width: 100%;
+}
+
 .catalogo-card {
-  min-width: 200px;
-  flex: 0 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+    flex: 0 0 22%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 0 10px;
 }
+
 .catalogo-card:hover {
-  transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
+
+.catalogo-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 15px;
+}
+
 .catalogo-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
+
 .catalogo-card h3 {
-  padding: 10px;
-  background: #f8f8f8;
-  font-size: 1.2rem;
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #333;
 }
+
+/* Controles del carrusel */
+.catalogo-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+    z-index: 10;
+    margin: 0 15px;
+}
+
+.catalogo-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores */
+.catalogo-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.catalogo-indicadores .indicador {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.catalogo-indicadores .indicador.activo {
+    background: rgba(0, 0, 0, 1);
+}
+
+
 /* Grid Colecciones */
 .colecciones{
   margin-bottom: 50px;
@@ -111,7 +196,7 @@ button {
   grid-template-columns: repeat(4,1fr);
   justify-content: center;
   text-align: center;
-  margin: 20px;
+  margin: 2rem;
 }
 .colecciones-grid img {
   width: 100%;
@@ -123,7 +208,7 @@ button {
   text-align: center;
 }
 .colecciones-grid a{
-  margin:20px;
+  margin: 20px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s;
   font-size: 30px;
@@ -143,7 +228,7 @@ button {
   grid-template-columns: repeat(3,1fr);
   justify-content: center;
   text-align: center;
-  margin: 20px;
+  margin: 2rem;
 }
 .novedades-grid img{
   width: 100%;
@@ -159,29 +244,47 @@ button {
 .producto-card:hover{
   transform: scale(1.05);
 }
-/* Footer*/
-.footer-info{
-  background-color: black;
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  justify-items: center;
-  font-size: 20px;
+
+.sobre-nosotros {
+  padding: 2rem;
+  margin: 2rem;
+  min-width: 200px;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+
+  h2, p {
+    margin-bottom: 1rem;
+  }
 }
-.contact{
-  grid-column: 1;
-}
-.schedule{
-  grid-column: 2;
-  text-align: center;
-}
-.socials{
-  grid-column: 3;
-  text-align: center;
-}
-.copyright{
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding-top: 20px;
+
+.sobre-nosotros #developers-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+  justify-content: center;
+
+  .developer {
+    min-width: 200px;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+  .developer:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    object-fit: cover;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  h2 {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }

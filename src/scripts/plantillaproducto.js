@@ -10,18 +10,16 @@ window.onload = () => {
     const imageArticle = document.createElement("article");
     const img = document.createElement("img");
     img.src = infoProducto.imagen;
+    img.alt = infoProducto.nombre;
     imageArticle.appendChild(img);
     
     const infoArticle = document.createElement("article");
-    const nombre = document.createElement("h1");
+    const nombre = document.createElement("h2");
     nombre.innerText = infoProducto.nombre;
     const precio = document.createElement("p");
     precio.innerText = "$" + infoProducto.precio;
-    const descripcion = document.createElement("p");
-    descripcion.innerText = infoProducto.descripcion;
     infoArticle.appendChild(nombre);
     infoArticle.appendChild(precio);
-    infoArticle.appendChild(descripcion);
 
     productosSection.appendChild(imageArticle);
     productosSection.appendChild(infoArticle);
@@ -50,5 +48,34 @@ window.onload = () => {
     document.getElementById("btn-carrito").addEventListener("click", () => {
         agregarAlCarrito(ID, cnt);
         window.location.href = "./carrito.html";
+    });
+
+    const descripcion = document.getElementById("descripcion");
+    descripcion.innerText = infoProducto.descripcion;
+
+    const acordeonItems = document.querySelectorAll('.acordeon-item');
+
+    acordeonItems.forEach(item => {
+        const titulo = item.querySelector('.acordeon-titulo');
+
+        titulo.addEventListener('click', () => {
+        // Cerrar todos los demás acordeones
+        acordeonItems.forEach(otherItem => {
+            if (otherItem !== item) {
+            otherItem.querySelector('.acordeon-titulo').classList.remove('activo');
+            otherItem.querySelector('.acordeon-contenido').style.maxHeight = null;
+            }
+        });
+
+        // Alternar el acordeón actual
+        titulo.classList.toggle('activo');
+        const contenido = item.querySelector('.acordeon-contenido');
+
+        if (titulo.classList.contains('activo')) {
+            contenido.style.maxHeight = contenido.scrollHeight + "px";
+        } else {
+            contenido.style.maxHeight = null;
+        }
+        });
     });
 }
