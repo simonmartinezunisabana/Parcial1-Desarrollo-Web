@@ -11,7 +11,7 @@ const mapaProductos = {
     id: 2,
     nombre: "Anillo Apolo Personalizable",
     precio: 2800,
-    imagen: "./images/Anillos/anillo-apolo-personalizable.jpg",
+    imagen: "./images/Anillos/Anillo-Apolo-Personalizable.jpg",
     tipo: "Anillos",
     descripcion: "Anillo inspirado en Apolo, dios griego de las artes y la luz. Diseño elegante con opción de personalización con iniciales o símbolos significativos. Fabricado en plata 925, perfecto como regalo con significado especial."
   },
@@ -19,7 +19,7 @@ const mapaProductos = {
     id: 3,
     nombre: "Anillo Ares",
     precio: 3500,
-    imagen: "./images/Anillos/anillo-ares.jpg",
+    imagen: "./images/Anillos/ANILLO-ARES.jpg",
     tipo: "Anillos",
     descripcion: "Anillo tributo a Ares, dios griego de la guerra. Diseño guerrero con detalles robustos, grabados tácticos y acabado envejecido. Simboliza fuerza, valentía y protección. Para quienes llevan un espíritu guerrero."
   },
@@ -52,7 +52,7 @@ const mapaProductos = {
     id: 7,
     nombre: "Aretes Bella Perla",
     precio: 2500,
-    imagen: "./images/Aretes/aretes-bella.jpg",
+    imagen: "./images/Aretes/Aretes-Bella.jpg",
     tipo: "Aretes",
     descripcion: "Aretes elegantes en plata 925 bañada en oro de 18k con perlas naturales. La combinación perfecta entre la durabilidad de la plata y el lujo del oro. Diseño clásico y atemporal que añade sofisticación a cualquier look."
   },
@@ -60,7 +60,7 @@ const mapaProductos = {
     id: 8,
     nombre: "Aretes Flor Dorada",
     precio: 2200,
-    imagen: "./images/Aretes/aretes-flower.jpg",
+    imagen: "./images/Aretes/Aretes-Flower.jpg",
     tipo: "Aretes",
     descripcion: "Delicados aretes con diseño de flor en plata 925 bañada en oro de 18k. Cada pétalo está cuidadosamente detallado para crear un efecto natural y femenino. La calidad de la plata con el brillo premium del oro."
   },
@@ -68,7 +68,7 @@ const mapaProductos = {
     id: 9,
     nombre: "Aretes Gitanos Dorados",
     precio: 2800,
-    imagen: "./images/Aretes/aretes-gypsy.jpg",
+    imagen: "./images/Aretes/Aretes-Gypsy.jpg",
     tipo: "Aretes",
     descripcion: "Aretes bohemios con diseño gitano en plata 925 bañada en oro de 18k. Detalles grabados y colgantes que emanan un espíritu libre y aventurero. La resistencia de la plata con la elegancia dorada."
   },
@@ -84,7 +84,7 @@ const mapaProductos = {
     id: 11,
     nombre: "Aretes Olimpo Dorados",
     precio: 3500,
-    imagen: "./images/Aretes/aretes-olimpia.jpg",
+    imagen: "./images/Aretes/Aretes-Olimpia.jpg",
     tipo: "Aretes",
     descripcion: "Aretes inspirados en la mitología griega en plata 925 bañada en oro de 18k. Diseño majestuoso que combina la resistencia de la plata con el brillo divino del oro. Para looks con presencia y elegancia."
   },
@@ -92,7 +92,7 @@ const mapaProductos = {
     id: 12,
     nombre: "Aretes Trébol de la Suerte",
     precio: 2400,
-    imagen: "./images/Aretes/aretes-trebol.jpg",
+    imagen: "./images/Aretes/Aretes-Trebol.jpg",
     tipo: "Aretes",
     descripcion: "Encantadores aretes con forma de trébol de cuatro hojas en plata 925 bañada en oro de 18k. Simbolizan la buena suerte y prosperidad. La durabilidad de la plata con el valor añadido del baño en oro."
   },
@@ -313,7 +313,7 @@ const mapaProductos = {
     id: 39,
     nombre: "Dije Goldier",
     precio: 10200,
-    imagen: "./images/Dijes/dije-goldier.jpg",
+    imagen: "./images/Dijes/Dije-Goldier.jpg",
     tipo: "Dijes",
     descripcion: "Espectacular dije Goldier en oro de 18k con diseño contemporáneo y audaz. Combina líneas modernas con la tradición joyera, creando una pieza vanguardista. Ideal para personalidades que buscan destacar con joyería que rompe convenciones manteniendo el lujo del oro puro."
   },
@@ -395,7 +395,7 @@ const mapaProductos = {
     id: 49,
     nombre: "Anillo Lucia",
     precio: 4500,
-    imagen: "./images/Exclusivo/anillo-lucia.jpg",
+    imagen: "./images/Exclusivo/anillo-Lucia.jpg",
     tipo: "Anillos",
     material: "Plata 925",
     descripcion: "Elegante anillo Lucia fabricado en plata 925 de alta calidad. Diseño delicado y femenino con detalles refinados que capturan la luz perfectamente. Perfecto para uso diario o ocasiones especiales, combinando versatilidad y elegancia con un precio accesible."
@@ -404,7 +404,7 @@ const mapaProductos = {
     id: 50,
     nombre: "Aretes Velvet",
     precio: 6800,
-    imagen: "./images/Exclusivo/aretes-velvet.jpg",
+    imagen: "./images/Exclusivo/Aretes-Velvet.jpg",
     tipo: "Aretes",
     material: "Oro 18k",
     descripcion: "Exquisitos aretes Velvet en oro de 18k con diseño aterciopelado y acabado suave. Crean un efecto de luxe discreto que complementa cualquier outfit. Ideales para quienes buscan elegancia sofisticada con un toque moderno y contemporáneo."
@@ -413,7 +413,7 @@ const mapaProductos = {
     id: 51,
     nombre: "Dije Lumini",
     precio: 9200,
-    imagen: "./images/Exclusivo/dije-lumini.jpg",
+    imagen: "./images/Exclusivo/Dije-Lumini.jpg",
     tipo: "Dijes",
     material: "Oro 18k",
     descripcion: "Deslumbrante dije Lumini en oro de 18k con diseño que captura y refleja la luz. Patrones geométricos que crean juegos de luminosidad y sombras. Pieza moderna que simboliza claridad y brillo interior, perfecta para personalidades radiantes y positivas."
