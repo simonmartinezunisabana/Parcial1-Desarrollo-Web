@@ -148,3 +148,50 @@ main.checkout {
 #btn-comprar:hover {
   background:#444;
 }
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .header-center img {
+    width: 70%;
+  }
+  .header-left {
+    font-size: 30px;
+    margin-left: 10px;
+  }
+  main.checkout {
+    padding: 1rem;
+    max-width: 95%;
+  }
+  .checkout h1 {
+    font-size: 1.5rem;
+  }
+  .checkout h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 60px;
+  }
+  .header-center img {
+    width: 50%;
+  }
+  .header-left {
+    font-size: 40px;
+  }
+  main.checkout {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  .checkout h1 {
+    font-size: 1.8rem;
+  }
+  .checkout h2 {
+    font-size: 1.2rem;
+  }
+}

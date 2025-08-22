@@ -288,3 +288,61 @@ button {
     padding-bottom: 0.5rem;
   }
 }
+@media (max-width: 1024px) {
+  .colecciones-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .novedades-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .sobre-nosotros #developers-imgs {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 200px;
+  }
+  .slide-text {
+    font-size: 1.2rem;
+    left: 5%;
+  }
+  .catalogo-card {
+    flex: 0 0 45%;
+  }
+  .colecciones-grid {
+    grid-template-columns: 1fr;
+  }
+  .novedades-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobre-nosotros img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 120%;
+  }
+  .hero {
+    height: 150px;
+  }
+  .slide-text {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+  .catalogo-card {
+    flex: 0 0 90%;
+  }
+  .colecciones h2,
+  .novedades h2 {
+    font-size: 1.5rem;
+  }
+  .sobre-nosotros {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

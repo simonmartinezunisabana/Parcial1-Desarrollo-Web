@@ -50,3 +50,20 @@ a {
       width: 25%;
     }
 }
+@media (max-width: 600px) {
+  #productos-grid .producto {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  #productos-grid .producto {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  #productos-grid .producto {
+    width: 25%;
+  }
+}

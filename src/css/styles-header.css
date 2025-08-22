@@ -84,3 +84,33 @@ header {
   font-size: 25px;
   padding-right: 10px;
 }
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .header-center img {
+    width: 10rem;
+  }
+  .header-right {
+    justify-self: center;
+  }
+  #search-btn, #catalogo-btn, .header-right a {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 5rem;
+  }
+  .header-center img {
+    width: 12rem;
+  }
+  #search-btn, #catalogo-btn, .header-right a {
+    font-size: 22px;
+  }
+}
