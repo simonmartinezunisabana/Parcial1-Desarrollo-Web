@@ -80,13 +80,13 @@ main.checkout {
   gap: 1rem 2rem;
 }
 
-.checkout-form label {
+.checkout-info-envio label {
   font-weight: 500;
   margin-bottom: 0.3rem;
   display: block;
 }
 
-.checkout-form input {
+.checkout-info-envio input {
   width: 100%;
   padding: 0.6rem;
   border-radius: 8px;
@@ -95,14 +95,14 @@ main.checkout {
   transition: border 0.2s;
 }
 
-.checkout-form input:focus {
+.checkout-info-envio input:focus {
   border-color: #000;
 }
 
 /* Inputs de ancho completo */
-.checkout-form input[type="text"]:nth-of-type(1),
-.checkout-form input[type="email"],
-.checkout-form input[type="tel"] {
+.checkout-info-envio input[type="text"]:nth-of-type(1),
+.checkout-info-envio input[type="email"],
+.checkout-info-envio input[type="tel"] {
   grid-column: span 2;
 }
 
@@ -133,7 +133,7 @@ main.checkout {
 }
 
 /* ==== BOTÓN COMPRAR ==== */
-.btn-comprar {
+#btn-comprar {
   display: block;
   width: 100%;
   margin-top: 1.5rem;
@@ -146,7 +146,7 @@ main.checkout {
   font-size: 1rem;
   transition: background 0.2s;
 }
-.btn-comprar:hover {
+#btn-comprar:hover {
   background:#444;
 }
 footer {

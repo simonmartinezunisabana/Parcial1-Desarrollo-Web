@@ -1,8 +1,10 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+
 header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: black;
-  height: 60px;
+  height: 70px;
   align-items: center;
 }
 .header-center{

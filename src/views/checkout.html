@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joyería Elegance - Checkout</title>
   <link rel="stylesheet" href="../css/styles-header.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles-checkout.css">
   <script type="module" src="../scripts/checkout.js"></script>
 </head>
 <body>
@@ -46,47 +46,49 @@
     <!-- Datos del cliente -->
     <section class="checkout-form">
       <h2>Información de Envío</h2>
-      <form>
-        <label>Nombre completo</label>
-        <input type="text" required>
+      <form id="form-pedido" action="index.html" method="GET">
+        <section class="checkout-info-envio">
+          <label>Nombre completo</label>
+          <input name="nombre" type="text" required>
 
-        <label>Correo electrónico</label>
-        <input type="email" required>
+          <label>Correo electrónico</label>
+          <input name="correo" type="email" required>
 
-        <label>Teléfono</label>
-        <input type="tel" required>
+          <label>Teléfono</label>
+          <input name="telefono" type="tel" required>
 
-        <label>Dirección</label>
-        <input type="text" required>
+          <label>Dirección</label>
+          <input name="direccion" type="text" required>
 
-        <label>Ciudad</label>
-        <input type="text" required>
+          <label>Ciudad</label>
+          <input name="ciudad" type="text" required>
 
-        <label>Código Postal</label>
-        <input type="text" required>
+          <label>Código Postal</label>
+          <input name="codigoo-postal" type="text" required>
+        </section>
+        
+        <!-- Métodos de pago -->
+        <section class="checkout-pago">
+          <h2>Método de Pago</h2>
+          <label>
+            <input type="radio" name="pago" checked> Tarjeta de Crédito/Débito
+          </label>
+          <label>
+            <input type="radio" name="pago"> Transferencia Bancaria
+          </label>
+          <label>
+            <input type="radio" name="pago"> Contraentrega
+          </label>
+        </section>
+
+        <!-- Resumen -->
+        <section id="checkout-resumen">
+          <h2>Resumen de Compra</h2>
+        </section>
+
+        <button id="btn-comprar" type="sumbit">Confirmar Pedido</button>
       </form>
     </section>
-
-    <!-- Métodos de pago -->
-    <section class="checkout-pago">
-      <h2>Método de Pago</h2>
-      <label>
-        <input type="radio" name="pago" checked> Tarjeta de Crédito/Débito
-      </label>
-      <label>
-        <input type="radio" name="pago"> Transferencia Bancaria
-      </label>
-      <label>
-        <input type="radio" name="pago"> Contraentrega
-      </label>
-    </section>
-
-    <!-- Resumen -->
-    <section id="checkout-resumen">
-      <h2>Resumen de Compra</h2>
-    </section>
-
-    <button class="btn btn-comprar">Confirmar Pedido</button>
   </main>
 
   <!-- ===== FOOTER ===== -->

@@ -30,10 +30,10 @@ window.onload = () => {
         if (carrito[id]) {
             carrito[id] += parseInt(cnt);
         } else {
-            carrito[id] = 1;
+            carrito[id] = parseInt(cnt);
         }
 
-        console.log(carrito[id]);
+        console.log(cnt);
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
@@ -44,6 +44,7 @@ window.onload = () => {
         if(cnt <= 0){
             inputCantidad.value = 1;
         }
+        console.log(cnt);
     });
 
     document.getElementById("btn-carrito").addEventListener("click", () => {

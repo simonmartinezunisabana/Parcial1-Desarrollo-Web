@@ -22,6 +22,22 @@ window.onload = () => {
     for (let id in carrito) {
         anadirProductoAVista(id);
     }
+
+    const form = document.getElementById("form-pedido");
+    form.addEventListener("submit", () =>{
+        form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
+
+        for (let id in carrito) {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = `cnt_id${id}`;
+            input.value = carrito[id];
+            form.appendChild(input);
+        }
+
+        localStorage.removeItem("carrito");
+        carrito = {};
+    });
 }
 
 {/* 

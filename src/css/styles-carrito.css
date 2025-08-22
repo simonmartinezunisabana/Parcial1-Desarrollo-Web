@@ -112,18 +112,19 @@ main.carrito {
   font-size: 1.3rem;
 }
 
-.btn-comprar {
+#btn-checkout {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
   background: #000;
+  border: none;
   color: white;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s;
 }
 
-.btn-comprar:hover {
+#btn-checkout:hover {
   background:#444;
 }
 footer {

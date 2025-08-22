@@ -10,6 +10,7 @@ window.onload = () => {
 
         const img = document.createElement("img");
         img.src = infoProducto.imagen;
+        img.alt = infoProducto.nombre;
         producto.appendChild(img);
 
         const link = document.createElement("a");
