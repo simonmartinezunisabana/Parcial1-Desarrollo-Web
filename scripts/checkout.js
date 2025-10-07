@@ -24,6 +24,51 @@ window.onload = () => {
     }
 
     const form = document.getElementById("form-pedido");
+    form.addEventListener("submit", async (event) =>{
+        form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
+
+        for (let id in carrito) {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = `cnt_id${id}`;
+            input.value = carrito[id];
+            form.appendChild(input);
+        }
+
+        const datosForm = Object.fromEntries(new FormData(form))
+
+        try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbw6ewku6zOX19pQp_XPVge7witGTyxuDAqlvAaJoarCodGVpKW3iCQ2mSYqihTJizQa/exec" ,{
+                method: "POST",
+                mode: "cors",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(datosForm)
+            });
+            if (!response.ok) {
+                throw new Error(`Error HTTP ${response.status}: ${response.statusText}`)
+            }
+            console.log(datosForm)
+            console.log("Datos enviados correctamente")
+        }catch (error){
+            console.error("Error de Post: " + error.message);
+
+        }
+        localStorage.removeItem("carrito");
+        carrito = {};
+    });
+}
+
+{/* 
+<section class="checkout-resumen">
+    <h2>Resumen de Compra</h2>
+    <p>Anillo de Oro Blanco</p><span>$2,500</span>
+    <h3>Total:</h3><span>$4,400</span>
+</section>
+*/}
+/*
+const form = document.getElementById("form-pedido");
     form.addEventListener("submit", () =>{
         form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
 
@@ -37,13 +82,4 @@ window.onload = () => {
 
         localStorage.removeItem("carrito");
         carrito = {};
-    });
-}
-
-{/* 
-<section class="checkout-resumen">
-    <h2>Resumen de Compra</h2>
-    <p>Anillo de Oro Blanco</p><span>$2,500</span>
-    <h3>Total:</h3><span>$4,400</span>
-</section>
-*/}
+    });*/
