@@ -2,6 +2,7 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 let totalCarrito = 0;
 
 window.onload = () => {
+    const loader = document.getElementById("loader"); // 👈 loader del HTML
     const carritoProductos = document.getElementById("carrito-productos");
     const textoTotal = document.getElementById("total-carrito");
     textoTotal.innerText = "$" + totalCarrito;
@@ -11,7 +12,6 @@ window.onload = () => {
         try {
             const response = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec");
             const result = await response.json();
-            console.log(result.data);
             mp = result.data;
         } catch (error) {
             console.error("Error al obtener los productos", error);
@@ -21,12 +21,20 @@ window.onload = () => {
 
     async function renderProductos() {
         const productos = await getProducts();
-        for(let id in carrito){
-            totalCarrito += parseInt(productos[id-1].precio) * carrito[id];
+
+        // Evita errores si algo falla
+        if (!productos || productos.length === 0) {
+            console.error("No se encontraron productos");
+            loader.classList.add("hidden");
+            return;
         }
 
-        function anadirProductoAVista(id){
-            const infoProducto = productos[id-1];
+        for (let id in carrito) {
+            totalCarrito += parseInt(productos[id - 1].precio) * carrito[id];
+        }
+
+        function anadirProductoAVista(id) {
+            const infoProducto = productos[id - 1];
             const carritoItem = document.createElement("article");
             carritoItem.className = "carrito-item";
 
@@ -57,13 +65,11 @@ window.onload = () => {
             input.type = "number";
             input.min = 1;
             input.addEventListener("change", () => {
-                totalCarrito -= carrito[id] * parseInt(productos[id].precio);
+                totalCarrito -= carrito[id] * parseInt(productos[id - 1].precio);
                 let cnt = parseInt(input.value);
-                if(cnt <= 0){
-                    cnt = input.value = 1;
-                }
+                if (cnt <= 0) cnt = input.value = 1;
                 carrito[id] = cnt;
-                totalCarrito += carrito[id] * parseInt(productos[id].precio);
+                totalCarrito += carrito[id] * parseInt(productos[id - 1].precio);
                 textoTotal.innerText = "$" + totalCarrito;
                 localStorage.setItem("carrito", JSON.stringify(carrito));
             });
@@ -71,68 +77,57 @@ window.onload = () => {
 
             const eliminar = document.createElement("button");
             eliminar.innerText = "Eliminar";
-            eliminar.className = "btn-eliminar"
+            eliminar.className = "btn-eliminar";
             eliminar.addEventListener("click", () => {
                 eliminarDelCarrito(id);
                 carritoItem.remove();
             });
             cantidad.appendChild(eliminar);
+
             itemInfo.appendChild(cantidad);
-
             carritoItem.appendChild(itemInfo);
-
             carritoProductos.appendChild(carritoItem);
         }
 
         function eliminarDelCarrito(id) {
-            totalCarrito -= carrito[id] * parseInt(productos[id].precio);
+            totalCarrito -= carrito[id] * parseInt(productos[id - 1].precio);
             textoTotal.innerText = "$" + totalCarrito;
             delete carrito[id];
             localStorage.setItem("carrito", JSON.stringify(carrito));
-            if(totalCarrito == 0){
-                console.log("Carrito Vacío");
+
+            if (totalCarrito == 0) {
+                carritoProductos.innerHTML = "";
                 const vacio = document.createElement("h2");
-                vacio.class = "vacio";
+                vacio.className = "vacio";
                 vacio.innerText = "Carrito Vacío.";
                 carritoProductos.appendChild(vacio);
             }
         }
 
-        if(totalCarrito > 0){
+        if (totalCarrito > 0) {
             for (let id in carrito) {
                 anadirProductoAVista(id);
             }
-        }else{
-            console.log("Carrito Vacío");
+        } else {
             const vacio = document.createElement("h2");
-            vacio.class = "vacio";
+            vacio.className = "vacio";
             vacio.innerText = "Carrito Vacío.";
             carritoProductos.appendChild(vacio);
         }
 
-        document.getElementById("btn-checkout").addEventListener("click", () =>{
-            if(totalCarrito > 0){
+        textoTotal.innerText = "$" + totalCarrito;
+
+        document.getElementById("btn-checkout").addEventListener("click", () => {
+            if (totalCarrito > 0) {
                 window.location.href = "checkout.html";
-            }else{
+            } else {
                 alert('No hay artículos en el carrito.');
             }
         });
+
+        // 👇 Ocultar loader después de renderizar todo
+        loader.classList.add("hidden");
     }
 
     renderProductos();
-}
-
-{/* 
-<div class="carrito-item">
-    <img src="../assets/img/prod1.jpg" alt="Anillo oro blanco">
-    <div class="item-info">
-        <h3>Anillo de Oro Blanco</h3>
-        <p>$2,500</p>
-        <div class="cantidad">
-            <label>Cantidad:</label>
-            <input type="number" value="1" min="1">
-        </div>
-    </div>
-    <button class="btn-eliminar"><i class="fas fa-trash"></i></button>
-</div>
-*/}
+};
