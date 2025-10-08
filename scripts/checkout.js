@@ -39,7 +39,32 @@ window.onload = () => {
         e.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
+
+        const productos = [];
+        let total = 0;
+
+        for (let id in carrito){
+            const info = mapaProductos[id];
+            if (info){
+                const cantidad = carrito[id];
+                const subtotal = info.precio * cantidad;
+                total += subtotal;
+
+                productos.push({
+                    id,
+                    nombre: info.nombre,
+                    cantidad,
+                    precio: info.precio
+                })
+            }
+        }
+
+        data.productos = productos;
+        data.total = total;
+
         await enviarPedido(data);
+
+        localStorage.removeItem("carrito");
         window.location.href = "index.html";
     });
 }
