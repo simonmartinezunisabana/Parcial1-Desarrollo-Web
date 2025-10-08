@@ -63,6 +63,7 @@ window.onload = () => {
         data.total = total;
 
         await enviarPedido(data);
+        alert("Pedido enviado correctamente");
 
         localStorage.removeItem("carrito");
         window.location.href = "index.html";
