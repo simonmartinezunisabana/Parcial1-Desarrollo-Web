@@ -14,7 +14,7 @@ window.onload = () => {
     async function getProduct(id) {
         let p = null;
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwKnSamv6TZUqQeXb4fTYTRlKcITmSR7r-hJ_uVwU4brtndeRF8au9AQ2f0ZhQ_XqTc/exec");
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec");
             const result = await response.json();
             console.log(result.data[id - 1]);
             p = result.data[id - 1];
