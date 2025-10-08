@@ -1,9 +1,8 @@
 window.onload = () => {
-    const loader = document.querySelector(".loader"); // mismo selector que usaste en el HTML
+    const loader = document.querySelector(".loader");
     const params = new URLSearchParams(window.location.search);
     const productosGrid = document.getElementById("productos-grid");
 
-    // 🔹 Mostrar y ocultar el loader
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
 
@@ -21,7 +20,7 @@ window.onload = () => {
     }
 
     async function renderProductos() {
-        showLoader(); // 🌀 Mostrar loader mientras se cargan los productos
+        showLoader();
 
         const productos = await getProducts();
 
@@ -43,9 +42,7 @@ window.onload = () => {
             img.src = infoProducto.imagen;
             img.alt = infoProducto.nombre;
 
-            // ⏳ Esperar que la imagen cargue para quitar el loader al final
             img.addEventListener("load", () => {
-                // si todas las imágenes se cargaron, ocultar loader
                 const allLoaded = [...document.querySelectorAll("#productos-grid img")]
                     .every(im => im.complete);
                 if (allLoaded) setTimeout(() => hideLoader(), 300);
@@ -66,7 +63,7 @@ window.onload = () => {
         }
 
         function construirVista(tipo) {
-            productosGrid.innerHTML = ""; // limpiar antes de renderizar
+            productosGrid.innerHTML = "";
             for (let id in productos) {
                 const product = productos[id];
                 if (tipo === product.tipo) {

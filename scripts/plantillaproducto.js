@@ -40,7 +40,6 @@ window.onload = () => {
         img.src = producto.imagen;
         img.alt = producto.nombre;
 
-        // 👇 Aquí es la clave: ocultamos el loader cuando la imagen haya cargado
         img.addEventListener("load", () => {
             setTimeout(() => hideLoader(), 300);
         });
