@@ -24,7 +24,7 @@ window.onload = () => {
 
     async function renderProductos() {
         showLoader();
-        
+
         const productos = await getProducts();
 
         if (!productos || productos.length === 0) {
@@ -41,6 +41,7 @@ window.onload = () => {
             const infoProducto = productos[id - 1];
             const carritoItem = document.createElement("article");
             carritoItem.className = "carrito-item";
+            carritoItem.classList.add("scale-in");
 
             const img = document.createElement("img");
             img.src = infoProducto.imagen;
@@ -50,7 +51,8 @@ window.onload = () => {
             img.addEventListener("load", () => {
                 const allLoaded = [...document.querySelectorAll("#carrito-productos img")]
                     .every(im => im.complete);
-                if (allLoaded) setTimeout(() => hideLoader(), 300);
+                    carritoProductos.style.height = "auto";
+                if (allLoaded) setTimeout(() => hideLoader(), 400);
             });
 
             const itemInfo = document.createElement("div");
@@ -97,6 +99,7 @@ window.onload = () => {
             itemInfo.appendChild(cantidad);
             carritoItem.appendChild(itemInfo);
             carritoProductos.appendChild(carritoItem);
+            setTimeout(() => {carritoItem.classList.add("show");}, 50);
         }
 
         function eliminarDelCarrito(id) {

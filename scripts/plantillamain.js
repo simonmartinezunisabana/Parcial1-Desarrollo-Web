@@ -2,6 +2,8 @@ window.onload = () => {
     const loader = document.querySelector(".loader");
     const params = new URLSearchParams(window.location.search);
     const productosGrid = document.getElementById("productos-grid");
+    const categoria = document.querySelector(".categoria");
+    console.log(categoria);
 
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
@@ -34,6 +36,7 @@ window.onload = () => {
             const infoProducto = productos[id - 1];
             const producto = document.createElement("div");
             producto.className = "producto";
+            producto.classList.add("scale-in");
 
             const link = document.createElement("a");
             link.href = "PlantillaProducto.html?id=" + infoProducto.id;
@@ -45,7 +48,8 @@ window.onload = () => {
             img.addEventListener("load", () => {
                 const allLoaded = [...document.querySelectorAll("#productos-grid img")]
                     .every(im => im.complete);
-                if (allLoaded) setTimeout(() => hideLoader(), 300);
+                categoria.style.height = "auto";
+                if (allLoaded) setTimeout(() => {hideLoader();}, 400);
             });
 
             link.appendChild(img);
@@ -60,6 +64,7 @@ window.onload = () => {
 
             producto.appendChild(link);
             productosGrid.appendChild(producto);
+            setTimeout(() => {producto.classList.add("show");}, 50);
         }
 
         function construirVista(tipo) {

@@ -25,6 +25,28 @@ window.onload = () => {
     async function renderProducto() {
         showLoader();
 
+        const acordeonItems = document.querySelectorAll(".acordeon-item");
+        acordeonItems.forEach(item => {
+            const titulo = item.querySelector(".acordeon-titulo");
+            titulo.addEventListener("click", () => {
+                acordeonItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector(".acordeon-titulo").classList.remove("activo");
+                        otherItem.querySelector(".acordeon-contenido").style.maxHeight = null;
+                    }
+                });
+
+                titulo.classList.toggle("activo");
+                const contenido = item.querySelector(".acordeon-contenido");
+
+                if (titulo.classList.contains("activo")) {
+                    contenido.style.maxHeight = contenido.scrollHeight + "px";
+                } else {
+                    contenido.style.maxHeight = null;
+                }
+            });
+        });
+
         const producto = await getProduct(ID);
 
         if (!producto) {
@@ -36,17 +58,20 @@ window.onload = () => {
         }
 
         const imageArticle = document.createElement("article");
+        imageArticle.classList.add("scale-in");
         const img = document.createElement("img");
         img.src = producto.imagen;
         img.alt = producto.nombre;
 
         img.addEventListener("load", () => {
-            setTimeout(() => hideLoader(), 300);
+            productosSection.style.height = "auto"; 
+            setTimeout(() => {hideLoader();}, 500);
         });
 
         imageArticle.appendChild(img);
 
         const infoArticle = document.createElement("article");
+        infoArticle.classList.add("scale-in");
         const nombre = document.createElement("h2");
         nombre.innerText = producto.nombre;
 
@@ -59,6 +84,7 @@ window.onload = () => {
         if (productosSection) {
             productosSection.appendChild(imageArticle);
             productosSection.appendChild(infoArticle);
+            setTimeout(() => {imageArticle.classList.add("show"); infoArticle.classList.add("show");}, 50);
         }
 
         function agregarAlCarrito(id, cnt) {
@@ -93,28 +119,6 @@ window.onload = () => {
 
         const descripcion = document.getElementById("descripcion");
         if (descripcion) descripcion.innerText = producto.descripcion;
-
-        const acordeonItems = document.querySelectorAll(".acordeon-item");
-        acordeonItems.forEach(item => {
-            const titulo = item.querySelector(".acordeon-titulo");
-            titulo.addEventListener("click", () => {
-                acordeonItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.querySelector(".acordeon-titulo").classList.remove("activo");
-                        otherItem.querySelector(".acordeon-contenido").style.maxHeight = null;
-                    }
-                });
-
-                titulo.classList.toggle("activo");
-                const contenido = item.querySelector(".acordeon-contenido");
-
-                if (titulo.classList.contains("activo")) {
-                    contenido.style.maxHeight = contenido.scrollHeight + "px";
-                } else {
-                    contenido.style.maxHeight = null;
-                }
-            });
-        });
     }
 
     renderProducto();

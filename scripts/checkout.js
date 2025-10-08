@@ -1,7 +1,11 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 
 window.onload = () => {
-    const checkoutResumen = document.getElementById("checkout-resumen");
+    const loader = document.getElementById("loader");
+    const checkoutResumen = document.querySelector(".checkout-resumen");
+
+    const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
+    const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
 
     async function getProducts() {
         let mp = null;
@@ -17,11 +21,14 @@ window.onload = () => {
     }
 
     async function renderProductos() {
+        showLoader();
+
         const productos = await getProducts();
 
         function anadirProductoAVista(id){
             const infoProducto = productos[id-1];
             const checkoutItem = document.createElement("article");
+            checkoutItem.className = "checkout-item";
 
             const nombre = document.createElement("h3");
             nombre.innerText = infoProducto.nombre + " x" + carrito[id];
@@ -37,6 +44,8 @@ window.onload = () => {
         for (let id in carrito) {
             anadirProductoAVista(id);
         }
+        checkoutResumen.style.height = "auto";
+        setTimeout(() => hideLoader(), 400);
 
         const form = document.getElementById("form-pedido");
         form.addEventListener("submit", () =>{
