@@ -24,42 +24,23 @@ window.onload = () => {
     }
 
     const form = document.getElementById("form-pedido");
-    form.addEventListener("submit", async (event) =>{
-        form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
+    async function enviarPedido(pedido) {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec", {
+            redirect: "follow",
+            method: "POST",
+            body: JSON.stringify(pedido),
+            headers: { "Content-Type": "text/plain;charset=utf-8" }
+        });
 
-        for (let id in carrito) {
-            const input = document.createElement("input");
-            input.type = "hidden";
-            input.name = `cnt_id${id}`;
-            input.value = carrito[id];
-            form.appendChild(input);
-        }
-
-        const datosForm = Object.fromEntries(new FormData(form))
-        
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwKnSamv6TZUqQeXb4fTYTRlKcITmSR7r-hJ_uVwU4brtndeRF8au9AQ2f0ZhQ_XqTc/exec" ,{
-                redirect: "follow",
-                method: "POST",
-                headers:{
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(datosForm)
-            });
-            if (!response.ok) {
-                throw new Error(`Error HTTP ${response.status}: ${response.statusText}`)
-            }
-
-            const data = await response.json();
-            console.log("Respuesta:", data);
-            console.log("Datos enviados correctamente")
-
-        }catch (error){
-            console.error("Error de Post: " + error.message);
-
-        }
-        localStorage.removeItem("carrito");
-        carrito = {};
+        const data = await res.json();
+        console.log("Respuesta:", data.data);
+    };
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        await enviarPedido(data);
+        window.location.href = "index.html";
     });
 }
 /*{ 
