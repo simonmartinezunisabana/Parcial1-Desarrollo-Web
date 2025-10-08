@@ -36,11 +36,11 @@ window.onload = () => {
         }
 
         const datosForm = Object.fromEntries(new FormData(form))
-
+        
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbw6ewku6zOX19pQp_XPVge7witGTyxuDAqlvAaJoarCodGVpKW3iCQ2mSYqihTJizQa/exec" ,{
+            const response = await fetch("https://script.google.com/macros/s/AKfycbwKnSamv6TZUqQeXb4fTYTRlKcITmSR7r-hJ_uVwU4brtndeRF8au9AQ2f0ZhQ_XqTc/exec" ,{
+                redirect: "follow",
                 method: "POST",
-                mode: "cors",
                 headers:{
                     "Content-Type": "application/json"
                 },
@@ -49,8 +49,11 @@ window.onload = () => {
             if (!response.ok) {
                 throw new Error(`Error HTTP ${response.status}: ${response.statusText}`)
             }
-            console.log(datosForm)
+
+            const data = await response.json();
+            console.log("Respuesta:", data);
             console.log("Datos enviados correctamente")
+
         }catch (error){
             console.error("Error de Post: " + error.message);
 
@@ -59,14 +62,13 @@ window.onload = () => {
         carrito = {};
     });
 }
-
-{/* 
+/*{ 
 <section class="checkout-resumen">
     <h2>Resumen de Compra</h2>
     <p>Anillo de Oro Blanco</p><span>$2,500</span>
     <h3>Total:</h3><span>$4,400</span>
 </section>
-*/}
+*/
 /*
 const form = document.getElementById("form-pedido");
     form.addEventListener("submit", () =>{
