@@ -2,8 +2,11 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 
 window.onload = () => {
     const loader = document.getElementById("loader");
+    const loaderPost = document.getElementById("loaderPost");
     const checkoutResumen = document.querySelector(".checkout-resumen");
 
+    const showLoaderPost = () => { if (loader) loaderPost.classList.remove("hidden"); loaderPost.style.visibility = "visible";};
+    const hideLoaderPost = () => { if (loader) loaderPost.classList.add("hidden"); };
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
 
@@ -22,6 +25,7 @@ window.onload = () => {
 
     async function renderProductos() {
         showLoader();
+        hideLoaderPost();
 
         const productos = await getProducts();
 
@@ -113,6 +117,7 @@ window.onload = () => {
             data.productosPedido = productosPedido;
             data.total = total;
 
+            showLoaderPost();
             await enviarPedido(data);
             alert("Pedido enviado correctamente");
 

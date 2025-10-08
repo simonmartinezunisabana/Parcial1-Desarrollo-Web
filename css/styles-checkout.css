@@ -47,7 +47,7 @@ a{
 main.checkout {
   flex: 1;
   padding: 2rem;
-  max-width: 1000px;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -73,6 +73,12 @@ main.checkout {
 }
 
 /* ==== FORMULARIO ==== */
+.checkout-form {
+  width: 60%;
+  max-width: 60%;
+  justify-self: center;
+}
+
 .checkout-form form {
   display: flex;
   flex-direction: column;
@@ -220,7 +226,16 @@ main.checkout {
   }
 }
 
-#loader {
+main {
+  position: relative;
+}
+
+#loaderPost {
+  border-radius: 0;
+  visibility: hidden;
+}
+
+.loader {
   position: absolute;
   top: 0;
   left: 0;
@@ -239,7 +254,7 @@ main.checkout {
   opacity: 1;
 }
 
-#loader.hidden {
+.loader.hidden {
   opacity: 0;
   visibility: hidden;
 
