@@ -158,6 +158,38 @@ a {
   }
 }
 
+#loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  visibility: visible;
+  opacity: 1;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 54px;
+  height: 54px;
+  border: 6px solid #222;
+  border-top: 6px solid #e63946; /* rojo */
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+
+
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .producto-detalle {
     width: 85%;
