@@ -67,8 +67,7 @@ main.checkout {
 }
 
 .checkout h2 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 2.2rem;
   border-bottom: 1px solid #eee;
   padding-bottom: 0.5rem;
 }
@@ -118,8 +117,29 @@ main.checkout {
 }
 
 /* ==== RESUMEN ==== */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(20%);
+  transition: transform 0.4s ease-out, opacity 0.5s ease-out;
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.scale-in {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.scale-in.show {
+  transform: scale(1);
+  opacity: 1;
+}
 .checkout-resumen {
   position: relative;
+  height: 10rem;
 }
 .checkout-resumen .resumen-item,
 .checkout-resumen .resumen-total {
@@ -130,8 +150,9 @@ main.checkout {
 
 .checkout-resumen .resumen-total {
   border-top: 1px solid #ddd;
+  margin-top: 1rem;
   padding-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 /* ==== BOTÓN COMPRAR ==== */
@@ -201,6 +222,7 @@ main.checkout {
 
 #loader {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;

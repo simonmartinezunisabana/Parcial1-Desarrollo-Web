@@ -34,7 +34,7 @@ main.carrito {
 
 .carrito h1 {
   margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -53,13 +53,13 @@ main.carrito {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.carrito-item.scale-in {
+.scale-in {
   transform: scale(0.5);
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.carrito-item.scale-in.show {
+.scale-in.show {
   transform: scale(1);
   opacity: 1;
 }
@@ -97,6 +97,11 @@ main.carrito {
   text-align: center;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+.vacio {
+  justify-self: center;
+  align-self: center;
 }
 
 .btn-eliminar {

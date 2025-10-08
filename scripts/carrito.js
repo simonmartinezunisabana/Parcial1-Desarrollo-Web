@@ -51,7 +51,7 @@ window.onload = () => {
             img.addEventListener("load", () => {
                 const allLoaded = [...document.querySelectorAll("#carrito-productos img")]
                     .every(im => im.complete);
-                    carritoProductos.style.height = "auto";
+                carritoProductos.style.height = "auto";
                 if (allLoaded) setTimeout(() => hideLoader(), 400);
             });
 
@@ -124,8 +124,12 @@ window.onload = () => {
         } else {
             const vacio = document.createElement("h2");
             vacio.className = "vacio";
+            vacio.classList.add("scale-in");
             vacio.innerText = "Carrito Vacío.";
             carritoProductos.appendChild(vacio);
+            carritoProductos.style.height = "auto";
+            setTimeout(() => {vacio.classList.add("show");}, 50);
+            setTimeout(() => hideLoader(), 400);
         }
 
         textoTotal.innerText = "$" + totalCarrito;

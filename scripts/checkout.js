@@ -28,7 +28,8 @@ window.onload = () => {
         function anadirProductoAVista(id){
             const infoProducto = productos[id-1];
             const checkoutItem = document.createElement("article");
-            checkoutItem.className = "checkout-item";
+            checkoutItem.className = "resumen-item";
+            checkoutItem.classList.add("slide-in-right");
 
             const nombre = document.createElement("h3");
             nombre.innerText = infoProducto.nombre + " x" + carrito[id];
@@ -39,13 +40,42 @@ window.onload = () => {
             checkoutItem.appendChild(precio);
 
             checkoutResumen.appendChild(checkoutItem);
+            setTimeout(() => {checkoutItem.classList.add("show");}, 50);
         }
 
+        let total = 0;
         for (let id in carrito) {
+            const info = productos[id-1];
+            if(info){
+                const cantidad = carrito[id];
+                const subtotal = info.precio * cantidad;
+                total += subtotal;
+            }
             anadirProductoAVista(id);
         }
+        const resumenTotal = document.createElement("article");
+        resumenTotal.className = "resumen-total";
+        
+        const totalTitle = document.createElement("p");
+        totalTitle.innerText = "Total:";
+        resumenTotal.appendChild(totalTitle);
+
+        const totalPrecio = document.createElement("p");
+        totalPrecio.innerText = "$" + (parseInt(total));
+        totalPrecio.classList.add("scale-in");
+        resumenTotal.appendChild(totalPrecio);
+
+        checkoutResumen.appendChild(resumenTotal);
+        setTimeout(() => {totalPrecio.classList.add("show");}, 50);
+
         checkoutResumen.style.height = "auto";
-        setTimeout(() => hideLoader(), 400);
+        setTimeout(() => {
+            hideLoader();
+            if(!total) {
+                alert("No hay productos en el carrito");
+                window.location.href = "carrito.html";
+            }
+        }, 400);
 
         const form = document.getElementById("form-pedido");
         async function enviarPedido(pedido) {
@@ -64,17 +94,14 @@ window.onload = () => {
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            const productos = [];
-            let total = 0;
+            const productosPedido = [];
 
             for (let id in carrito){
-                const info = mapaProductos[id];
+                const info = productos[id-1];
                 if (info){
                     const cantidad = carrito[id];
-                    const subtotal = info.precio * cantidad;
-                    total += subtotal;
 
-                    productos.push({
+                    productosPedido.push({
                         id,
                         nombre: info.nombre,
                         cantidad,
@@ -83,7 +110,7 @@ window.onload = () => {
                 }
             }
 
-            data.productos = productos;
+            data.productosPedido = productosPedido;
             data.total = total;
 
             await enviarPedido(data);
