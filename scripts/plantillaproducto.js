@@ -25,6 +25,27 @@ window.onload = () => {
     async function renderProducto() {
         showLoader();
 
+        let cnt = 1;
+        const inputCantidad = document.getElementById("cantidad");
+
+        if (inputCantidad) {
+            inputCantidad.addEventListener("change", () => {
+                cnt = parseInt(inputCantidad.value);
+                if (cnt <= 0) {
+                    inputCantidad.value = 1;
+                    cnt = 1;
+                }
+            });
+        }
+
+        const btnCarrito = document.getElementById("btn-carrito");
+        if (btnCarrito) {
+            btnCarrito.addEventListener("click", () => {
+                agregarAlCarrito(ID, cnt);
+                window.location.href = "./carrito.html";
+            });
+        }
+
         const acordeonItems = document.querySelectorAll(".acordeon-item");
         acordeonItems.forEach(item => {
             const titulo = item.querySelector(".acordeon-titulo");
@@ -94,27 +115,6 @@ window.onload = () => {
                 carrito[id] = parseInt(cnt);
             }
             localStorage.setItem("carrito", JSON.stringify(carrito));
-        }
-
-        let cnt = 1;
-        const inputCantidad = document.getElementById("cantidad");
-
-        if (inputCantidad) {
-            inputCantidad.addEventListener("change", () => {
-                cnt = parseInt(inputCantidad.value);
-                if (cnt <= 0) {
-                    inputCantidad.value = 1;
-                    cnt = 1;
-                }
-            });
-        }
-
-        const btnCarrito = document.getElementById("btn-carrito");
-        if (btnCarrito) {
-            btnCarrito.addEventListener("click", () => {
-                agregarAlCarrito(ID, cnt);
-                window.location.href = "./carrito.html";
-            });
         }
 
         const descripcion = document.getElementById("descripcion");
