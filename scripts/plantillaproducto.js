@@ -1,5 +1,3 @@
-import mapaProductos from "./data/products.js";
-
 const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 
 window.onload = () => {
