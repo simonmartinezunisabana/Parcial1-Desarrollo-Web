@@ -2,10 +2,13 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 let totalCarrito = 0;
 
 window.onload = () => {
-    const loader = document.getElementById("loader"); // 👈 loader del HTML
+    const loader = document.getElementById("loader");
     const carritoProductos = document.getElementById("carrito-productos");
     const textoTotal = document.getElementById("total-carrito");
     textoTotal.innerText = "$" + totalCarrito;
+
+    const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
+    const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
 
     async function getProducts() {
         let mp = null;
@@ -20,9 +23,10 @@ window.onload = () => {
     }
 
     async function renderProductos() {
+        showLoader();
+        
         const productos = await getProducts();
 
-        // Evita errores si algo falla
         if (!productos || productos.length === 0) {
             console.error("No se encontraron productos");
             loader.classList.add("hidden");
@@ -42,6 +46,12 @@ window.onload = () => {
             img.src = infoProducto.imagen;
             img.alt = infoProducto.nombre;
             carritoItem.appendChild(img);
+
+            img.addEventListener("load", () => {
+                const allLoaded = [...document.querySelectorAll("#carrito-productos img")]
+                    .every(im => im.complete);
+                if (allLoaded) setTimeout(() => hideLoader(), 300);
+            });
 
             const itemInfo = document.createElement("div");
             itemInfo.className = "item-info";
@@ -124,9 +134,6 @@ window.onload = () => {
                 alert('No hay artículos en el carrito.');
             }
         });
-
-        // 👇 Ocultar loader después de renderizar todo
-        loader.classList.add("hidden");
     }
 
     renderProductos();

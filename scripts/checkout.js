@@ -1,43 +1,61 @@
-import mapaProductos from "./data/products.js";
 const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 
 window.onload = () => {
     const checkoutResumen = document.getElementById("checkout-resumen");
 
-    function anadirProductoAVista(id){
-        const infoProducto = mapaProductos[id];
-        const checkoutItem = document.createElement("article");
-
-        const nombre = document.createElement("h3");
-        nombre.innerText = infoProducto.nombre + " x" + carrito[id];
-        checkoutItem.appendChild(nombre);
-
-        const precio = document.createElement("p");
-        precio.innerText = "$" + (parseInt(infoProducto.precio) * carrito[id]);
-        checkoutItem.appendChild(precio);
-
-        checkoutResumen.appendChild(checkoutItem);
+    async function getProducts() {
+        let mp = null;
+        try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec");
+            const result = await response.json();
+            console.log(result.data);
+            mp = result.data;
+        } catch (error) {
+            console.error("Error al obtener los productos", error);
+        }
+        return mp;
     }
 
-    for (let id in carrito) {
-        anadirProductoAVista(id);
-    }
+    async function renderProductos() {
+        const productos = await getProducts();
 
-    const form = document.getElementById("form-pedido");
-    form.addEventListener("submit", () =>{
-        form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
+        function anadirProductoAVista(id){
+            const infoProducto = productos[id-1];
+            const checkoutItem = document.createElement("article");
 
-        for (let id in carrito) {
-            const input = document.createElement("input");
-            input.type = "hidden";
-            input.name = `cnt_id${id}`;
-            input.value = carrito[id];
-            form.appendChild(input);
+            const nombre = document.createElement("h3");
+            nombre.innerText = infoProducto.nombre + " x" + carrito[id];
+            checkoutItem.appendChild(nombre);
+
+            const precio = document.createElement("p");
+            precio.innerText = "$" + (parseInt(infoProducto.precio) * carrito[id]);
+            checkoutItem.appendChild(precio);
+
+            checkoutResumen.appendChild(checkoutItem);
         }
 
-        localStorage.removeItem("carrito");
-        carrito = {};
-    });
+        for (let id in carrito) {
+            anadirProductoAVista(id);
+        }
+
+        const form = document.getElementById("form-pedido");
+        form.addEventListener("submit", () =>{
+            form.querySelectorAll("input[name^='cnt_id']").forEach(el => el.remove());
+
+            for (let id in carrito) {
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = `cnt_id${id}`;
+                input.value = carrito[id];
+                form.appendChild(input);
+            }
+
+            localStorage.removeItem("carrito");
+            carrito = {};
+        });
+    }
+
+    renderProductos();
 }
 
 {/* 
