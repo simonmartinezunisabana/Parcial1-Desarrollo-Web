@@ -1,4 +1,4 @@
-package JoyeriaElegance.Security;
+package JoyeriaElegance.demo.Security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,9 +11,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf().disable() // Desactiva CSRF para Postman
-            .authorizeHttpRequests()
-            .anyRequest().permitAll(); // Permite todos los endpoints
+                .csrf(csrf -> csrf.disable()) // ← así se desactiva CSRF ahora
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()
+                ); // Permite todos los endpoints
         return http.build();
     }
 }
