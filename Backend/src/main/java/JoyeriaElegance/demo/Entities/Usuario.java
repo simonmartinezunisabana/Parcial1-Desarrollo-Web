@@ -3,7 +3,7 @@ package JoyeriaElegance.demo.Entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "produtosjoyeriaapi-productos") //aqui ta el nombre de la tabla del MySQL jijijaja
+@Table(name = "usuarios") //aqui ta el nombre de la tabla del MySQL jijijaja
 public class Usuario {
 
     @Id
