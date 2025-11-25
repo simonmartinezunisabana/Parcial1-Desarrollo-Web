@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joyería Elegance - Cadenas</title>
+  <title>Joyería Elegance - Inicio</title>
   <link rel="stylesheet" href="./css/styles-header.css">
   <link rel="stylesheet" href="./css/styles-footer.css">
-  <link rel="stylesheet" href="./css/styles-basico-categoria.css">
-  <script type="module" src="./scripts/plantillamain.js"></script>
+  <link rel="stylesheet" href="./css/styles-login.css">
+  <script src="./scripts/login.js"></script>
 </head>
-<body>
 
-  <!-- ===== HEADER ===== -->
+<body>
+      <!-- ===== HEADER ===== -->
   <header>
     <div class="header-left">
         <!-- Botón catálogo con menú desplegable -->
@@ -42,14 +42,28 @@
     </div>
   </header>
 
-  <!-- ===== LISTA DE CADENAS ===== -->
-  <main class="categoria">
-    <div id="loader" class="loader">
+  <!-- ===== LOGIN ===== -->
+  <main class="login">
+    <div id="loaderPost" class="loader">
       <div class="spinner"></div>
     </div>
-    <h1 id="titulo"></h1>
-    <div id="productos-grid">
-    </div>
+    <h1>Inicio de sesión</h1>
+
+    <!-- Datos del cliente -->
+    <section class="login-form">
+      <h2>Ingrese sus datos:</h2>
+      <form id="form-login" action="index.html">
+        <section class="login-user-password">
+          <label>Usuario</label>
+          <input name="usuario" type="text" required>
+
+          <label>Contraseña</label>
+          <input name="contraseña" type="password" required>
+        </section>
+
+        <button id="btn-login" type="submit">Iniciar Sesión</button>
+      </form>
+    </section>
   </main>
 
   <!-- ===== FOOTER ===== -->
