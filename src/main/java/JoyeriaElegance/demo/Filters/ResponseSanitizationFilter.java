@@ -24,8 +24,11 @@ public class ResponseSanitizationFilter implements Filter {
         chain.doFilter(request, wrappedResponse);
 
         String path = ((HttpServletRequest) request).getRequestURI();
+        String method = ((HttpServletRequest) request).getMethod();
 
-        if (path.startsWith("/pedidos/")) {
+        if ((method.equals("GET") || method.equals("PUT")) &&
+                (path.equals("/pedidos") || path.startsWith("/pedidos/"))) {
+
             wrappedResponse.copyBodyToResponse();
             return;
         }
