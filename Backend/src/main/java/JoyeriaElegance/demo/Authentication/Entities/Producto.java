@@ -1,6 +1,15 @@
 package JoyeriaElegance.demo.Authentication.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "productos") // nombre de tu tabla en MySQL
@@ -24,6 +33,10 @@ public class Producto {
 
     @Column(columnDefinition = "TEXT")
     private String descripcion;
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private List<PedidoProducto> pedidos = new ArrayList<>();
 
     // Constructor vacío
     public Producto() {
@@ -87,6 +100,10 @@ public class Producto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public List<PedidoProducto> getPedidos() {
+        return pedidos;
     }
 
     @Override
