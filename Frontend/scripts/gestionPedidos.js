@@ -3,6 +3,8 @@ window.onload = () =>{
     const filterSelect = document.getElementById("filterSelect");
     const nameInput = document.getElementById("nameInput");
     const loader = document.getElementById("loader");
+
+    const token = sessionStorage.getItem("token");
     
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
@@ -56,7 +58,8 @@ window.onload = () =>{
         const response = await fetch(`http://localhost:8080/pedidos/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(pedidoActualizado)
         });
@@ -75,7 +78,9 @@ window.onload = () =>{
             let url = `http://localhost:8080/pedidos?`;
             if(filter && filter != "" && filter != "todos") url += `filter=${filter}`;
             if(search && search != "") url += `&search=${search}`;
-            const response = await fetch(url);
+            const response = await fetch(url,
+                {headers: {"Authorization": `Bearer ${token}`}}
+            );
             const result = await response.json();
             //console.log(result);
             pedidos = result;

@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       // Guardar token y usuario
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("usuario", usuario);
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("usuario", usuario);
 
       loader.style.display = "none";
 
