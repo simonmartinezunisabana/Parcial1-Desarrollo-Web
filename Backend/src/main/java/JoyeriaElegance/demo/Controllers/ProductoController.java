@@ -1,4 +1,4 @@
-package JoyeriaElegance.demo.Authentication.Controllers;
+package JoyeriaElegance.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,8 +8,8 @@ import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Objects;
 
-import JoyeriaElegance.demo.Authentication.Entities.Producto;
-import JoyeriaElegance.demo.Authentication.Repositories.ProductoRepository;
+import JoyeriaElegance.demo.Entities.Producto;
+import JoyeriaElegance.demo.Repositories.ProductoRepository;
 
 @RestController
 @RequestMapping("/productos")
