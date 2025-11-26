@@ -149,7 +149,7 @@ window.onload = () => {
             productoCard.className = "producto-card";
 
             const productoLink = document.createElement("a");
-            productoLink.href = "PlantillaProducto.html?id=" + productId;
+            productoLink.href = "PlantillaProducto.html?id=" + (productId+1);
             productoLink.className = "btn";
 
             const productoImg = document.createElement("img");
