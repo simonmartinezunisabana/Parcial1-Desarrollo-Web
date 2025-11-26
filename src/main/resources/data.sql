@@ -19,21 +19,11 @@
 -- Table structure for table `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos` (
-  `id` int NOT NULL,
-  `nombre` varchar(150) NOT NULL,
-  `precio` double NOT NULL,
-  `imagen` varchar(300) DEFAULT NULL,
-  `tipo` varchar(100) NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
-  `email` varchar(150) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+TRUNCATE TABLE productos;
+TRUNCATE TABLE usuarios;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,15 +40,8 @@ UNLOCK TABLES;
 -- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `password` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-26  2:52:50
+-- Dump completed on 2025-11-26  3:03:15

@@ -36,7 +36,7 @@ public class SecurityConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://127.0.0.1:5500");
         config.addAllowedOrigin("http://localhost:5500");
-        config.addAllowedOrigin("https://simonmartinezunisabana.github.io/Parcial1-Desarrollo-Web");
+        config.addAllowedOrigin("https://simonmartinezunisabana.github.io");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
