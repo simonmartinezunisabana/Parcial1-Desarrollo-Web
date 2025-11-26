@@ -3,7 +3,7 @@ package JoyeriaElegance.demo.Authentication.Entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "productos") // nombre de tu tabla en MySQL
+@Table(name = "produtosjoyeriaapi-productos") // nombre de tu tabla en MySQL
 public class Producto {
 
     @Id
