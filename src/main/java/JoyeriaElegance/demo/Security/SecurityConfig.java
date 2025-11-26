@@ -55,6 +55,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/login", "/test/**", "/error", "/productos").permitAll()
+                .requestMatchers(HttpMethod.POST, "/pedidos").permitAll()
                 .anyRequest().authenticated()
         );
 
