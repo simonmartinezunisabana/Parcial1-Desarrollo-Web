@@ -10,9 +10,11 @@ window.onload = () =>{
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
 
     filterSelect.addEventListener("change", () =>{
+        tablaPedidos.innerHTML = "";
         manageFilter();
     });
     nameInput.addEventListener("input", () =>{
+        tablaPedidos.innerHTML = "";
         manageFilter();
     });
 
@@ -73,6 +75,7 @@ window.onload = () =>{
     }
 
     async function fetchPedidos(filter, search) {
+        await (tablaPedidos.innerHTML = "");
         let pedidos = null;
         try {
             let url = `https://parcial1-desarrollo-web-production.up.railway.app/pedidos?`;
@@ -92,10 +95,10 @@ window.onload = () =>{
     }
 
     async function manageFilter(filter=filterSelect.value, search=nameInput.value){
-        tablaPedidos.innerHTML = "";
         showLoader();
         const pedidos = await fetchPedidos(filter, search);
         hideLoader();
+        tablaPedidos.innerHTML = "";
         renderTable(pedidos);
     }
 
