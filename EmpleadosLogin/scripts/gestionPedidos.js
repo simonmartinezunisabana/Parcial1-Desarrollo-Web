@@ -55,7 +55,7 @@ window.onload = () =>{
 
     async function completarPedido(id){
         const pedidoActualizado = {estado: true};
-        const response = await fetch(`http://localhost:8080/pedidos/${id}`, {
+        const response = await fetch(`https://parcial1-desarrollo-web-production.up.railway.app/pedidos/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -75,12 +75,13 @@ window.onload = () =>{
     async function fetchPedidos(filter, search) {
         let pedidos = null;
         try {
-            let url = `http://localhost:8080/pedidos?`;
+            let url = `https://parcial1-desarrollo-web-production.up.railway.app/pedidos?`;
             if(filter && filter != "" && filter != "todos") url += `filter=${filter}`;
             if(search && search != "") url += `&search=${search}`;
             const response = await fetch(url,
                 {headers: {"Authorization": `Bearer ${token}`}}
             );
+            if(!response.ok) window.location.href = "index.html";
             const result = await response.json();
             //console.log(result);
             pedidos = result;
