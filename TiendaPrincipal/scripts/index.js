@@ -30,7 +30,7 @@ window.onload = () => {
         function getRandomProduct() {
             let n = Math.floor(Math.random() * 55);
 
-            return productos[n];
+            return n;
         }
 
         const categorias = new Map();
@@ -111,7 +111,7 @@ window.onload = () => {
         let usedCategorias = new Set();
         let cntCategorias = 0;
         while(cntCategorias < 4){
-            const producto = getRandomProduct();
+            const producto = productos[getRandomProduct()];
             if(usedCategorias.has(producto.tipo)){
                 continue;
             }else{
@@ -143,12 +143,13 @@ window.onload = () => {
         </a>*/
 
         for(let i=0; i < 3; i++){
-            const producto = getRandomProduct();
+            const productId = getRandomProduct();
+            const producto = productos[productId];
             const productoCard = document.createElement("div");
             productoCard.className = "producto-card";
 
             const productoLink = document.createElement("a");
-            productoLink.href = "PlantillaProducto.html?id=" + producto.id;
+            productoLink.href = "PlantillaProducto.html?id=" + productId;
             productoLink.className = "btn";
 
             const productoImg = document.createElement("img");

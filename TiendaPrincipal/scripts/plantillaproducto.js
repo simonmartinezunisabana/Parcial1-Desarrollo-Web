@@ -12,10 +12,10 @@ window.onload = () => {
     async function getProduct(id) {
         let p = null;
         try {
-            const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
+            const response = await fetch(`https://parcial1-desarrollo-web-production.up.railway.app/productos/${id}`);
             const result = await response.json();
-            //console.log(result[id - 1]);
-            p = result[id - 1];
+            console.log(result);
+            p = result;
         } catch (error) {
             console.error("Error al obtener el producto", error);
         }
