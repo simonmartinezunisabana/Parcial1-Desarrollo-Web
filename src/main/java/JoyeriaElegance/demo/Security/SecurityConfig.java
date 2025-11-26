@@ -36,6 +36,7 @@ public class SecurityConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://127.0.0.1:5500");
         config.addAllowedOrigin("http://localhost:5500");
+        config.addAllowedOrigin("https://simonmartinezunisabana.github.io/Parcial1-Desarrollo-Web")
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
@@ -53,7 +54,7 @@ public class SecurityConfig {
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()));
 
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/login", "/test/**", "/error").permitAll()
+                .requestMatchers("/api/login", "/test/**", "/error", "/productos").permitAll()
                 .anyRequest().authenticated()
         );
 
