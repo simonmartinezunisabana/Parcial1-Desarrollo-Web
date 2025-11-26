@@ -1,7 +1,6 @@
-package JoyeriaElegance.demo.Authentication.Security;
+package JoyeriaElegance.demo.Security;
 
-import JoyeriaElegance.demo.Authentication.Filters.JwtAuthenticationFilter;
-import jakarta.servlet.http.HttpServletResponse;
+import JoyeriaElegance.demo.Filters.JwtAuthenticationFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

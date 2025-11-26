@@ -1,6 +1,6 @@
-package JoyeriaElegance.demo.Authentication.Filters;
+package JoyeriaElegance.demo.Filters;
 
-import JoyeriaElegance.demo.Authentication.Security.JwtUtils;
+import JoyeriaElegance.demo.Security.JwtUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,6 +1,6 @@
-package JoyeriaElegance.demo.Authentication.Controllers;
+package JoyeriaElegance.demo.Controllers;
 
-import JoyeriaElegance.demo.Authentication.Security.JwtUtils;
+import JoyeriaElegance.demo.Security.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,7 +1,7 @@
-package JoyeriaElegance.demo.Authentication.Repositories;
+package JoyeriaElegance.demo.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import JoyeriaElegance.demo.Authentication.Entities.Usuario;
+import JoyeriaElegance.demo.Entities.Usuario;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 

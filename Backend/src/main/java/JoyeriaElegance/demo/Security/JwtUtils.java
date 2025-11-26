@@ -1,4 +1,4 @@
-package JoyeriaElegance.demo.Authentication.Security;
+package JoyeriaElegance.demo.Security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

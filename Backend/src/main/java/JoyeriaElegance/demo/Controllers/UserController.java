@@ -1,8 +1,9 @@
-package JoyeriaElegance.demo.Authentication.Controllers;
+package JoyeriaElegance.demo.Controllers;
 
 import java.util.List;
 import java.util.Objects;
 
+import JoyeriaElegance.demo.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoyeriaElegance.demo.Authentication.Entities.Usuario;
-import JoyeriaElegance.demo.Authentication.Repositories.UserRepository;
+import JoyeriaElegance.demo.Entities.Usuario;
 import jakarta.persistence.EntityNotFoundException;
 
 @RestController

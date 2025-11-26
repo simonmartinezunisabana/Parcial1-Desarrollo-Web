@@ -1,4 +1,4 @@
-package JoyeriaElegance.demo.Authentication.Entities;
+package JoyeriaElegance.demo.Entities;
 
 import jakarta.persistence.*;
 

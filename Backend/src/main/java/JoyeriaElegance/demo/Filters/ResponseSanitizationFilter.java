@@ -1,4 +1,4 @@
-package JoyeriaElegance.demo.Authentication.Filters;
+package JoyeriaElegance.demo.Filters;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletResponse;

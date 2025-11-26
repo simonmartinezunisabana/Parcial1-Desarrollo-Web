@@ -1,7 +1,7 @@
-package JoyeriaElegance.demo.Authentication.Security;
+package JoyeriaElegance.demo.Security;
 
-import JoyeriaElegance.demo.Authentication.Entities.Usuario;
-import JoyeriaElegance.demo.Authentication.Repositories.UserRepository;
+import JoyeriaElegance.demo.Entities.Usuario;
+import JoyeriaElegance.demo.Repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.*;

@@ -1,7 +1,7 @@
-package JoyeriaElegance.demo.Authentication.Filters;
+package JoyeriaElegance.demo.Filters;
 
-import JoyeriaElegance.demo.Authentication.Entities.RequestLog;
-import JoyeriaElegance.demo.Authentication.Repositories.RequestLogRepository;
+import JoyeriaElegance.demo.Entities.RequestLog;
+import JoyeriaElegance.demo.Repositories.RequestLogRepository;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
