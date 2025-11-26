@@ -1,6 +1,7 @@
 package JoyeriaElegance.demo.Filters;
 
 import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,6 +22,13 @@ public class ResponseSanitizationFilter implements Filter {
                 new ContentCachingResponseWrapper((HttpServletResponse) response);
 
         chain.doFilter(request, wrappedResponse);
+
+        String path = ((HttpServletRequest) request).getRequestURI();
+
+        if (path.startsWith("/pedidos/")) {
+            wrappedResponse.copyBodyToResponse();
+            return;
+        }
 
         // Solo procesamos JSON real
         String contentType = wrappedResponse.getContentType();
