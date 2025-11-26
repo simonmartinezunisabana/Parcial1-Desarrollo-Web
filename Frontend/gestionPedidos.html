@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joyería Elegance - Gestión de Pedidos</title>
+  <link rel="stylesheet" href="./css/styles-header.css">
+  <link rel="stylesheet" href="./css/styles-footer.css">
+  <link rel="stylesheet" href="./css/styles-gestionPedidos.css">
+  <script type="module" src="./scripts/gestionPedidos.js"></script>
+    </head>
+
+    <body>
+        <!-- ===== HEADER ===== -->
+        <header>
+            <div class="header-left">
+                <!-- Botón catálogo con menú desplegable -->
+                <div class="catalogo-dropdown">
+                <button id="catalogo-btn"><i class="fas fa-bars"></i></button>
+                <div class="catalogo-menu">
+                    <a href="PlantillaMain.html?tipo=Anillos">Anillos</a>
+                    <a href="PlantillaMain.html?tipo=Pulsos">Pulsos</a>
+                    <a href="PlantillaMain.html?tipo=Pulseras">Pulseras</a>
+                    <a href="PlantillaMain.html?tipo=Dijes">Dijes</a>
+                    <a href="PlantillaMain.html?tipo=Cadenas">Cadenas</a>
+                    <a href="PlantillaMain.html?tipo=Brazaletes">Brazaletes</a>
+                    <a href="PlantillaMain.html?tipo=Argollas">Argollas</a>
+                    <a href="PlantillaMain.html?tipo=Aretes">Aretes</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Logo en el centro -->
+            <div class="header-center">
+                <a href="index.html"><img src="./images/Logo.png" alt="Joyería Logo" class="logo"></a>
+            </div>
+
+            <!-- Carrito a la derecha -->
+            <div class="header-right">
+                <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </header>
+
+        <!-- ===== PEDIDOS ===== -->
+        <main class="pedidos">
+            <h1>Gestión de Pedidos</h1>
+
+            <div>
+                <select id="filterSelect">
+                    <option value="todos" selected>Todos</option>
+                    <option value="completados">Completados</option>
+                    <option value="pendientes">Pendientes</option>
+                </select>
+                <input id="nameInput">
+            </div>
+            <div id="tableDiv">
+                <div id="loader" class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Ciudad</th>
+                            <th>Código Postal</th>
+                            <th>Lista Productos</th>
+                            <th>Costo Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaPedidos">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="footer-info">
+            <div class="contact">
+                <h4>Contacto</h4>
+                <p>Tel: +57 300 123 4567</p>
+                <p>Email: contacto@joyeriaelegance.com</p>
+            </div>
+            <div class="schedule">
+                <h4>Horario</h4>
+                <p>Lunes - Viernes: 9:00 - 18:00</p>
+                <p>Sábado: 10:00 - 16:00</p>
+                <p>Domingo: Cerrado</p>
+            </div>
+            <div class="socials">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+            <p class="copyright">© 2025 Joyería Elegance - Todos los derechos reservados</p>
+        </footer>
+    </body>
+</html>
