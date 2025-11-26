@@ -13,7 +13,7 @@ window.onload = () => {
     async function getProducts() {
         let mp = null;
         try {
-            const response = await fetch("http://localhost:8080/productos");
+            const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
             console.log(result);
             mp = result;
@@ -83,7 +83,7 @@ window.onload = () => {
 
         const form = document.getElementById("form-pedido");
         async function enviarPedido(pedido) {
-            const res = await fetch("http://localhost:8080/pedidos", {
+            const res = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/pedidos", {
                 method: "POST",
                 body: JSON.stringify(pedido),
                 headers: { "Content-Type": "application/json" }

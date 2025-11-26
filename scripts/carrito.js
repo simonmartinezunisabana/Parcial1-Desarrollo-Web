@@ -13,7 +13,7 @@ window.onload = () => {
     async function getProducts() {
         let mp = null;
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec");
+            const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
             mp = result.data;
         } catch (error) {
