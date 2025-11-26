@@ -4,18 +4,22 @@ window.onload = () => {
     const loader = document.getElementById("loader");
     const loaderPost = document.getElementById("loaderPost");
     const checkoutResumen = document.querySelector(".checkout-resumen");
+    const check = document.getElementById("check")
 
     const showLoaderPost = () => { if (loader) loaderPost.classList.remove("hidden"); loaderPost.style.visibility = "visible";};
     const hideLoaderPost = () => { if (loader) loaderPost.classList.add("hidden"); };
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
+    
+    check.classList.add("hidden");
+    //console.log(check);
 
     async function getProducts() {
         let mp = null;
         try {
             const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
-            console.log(result);
+            //console.log(result);
             mp = result;
         } catch (error) {
             console.error("Error al obtener los productos", error);
@@ -120,9 +124,16 @@ window.onload = () => {
 
             showLoaderPost();
             await enviarPedido(data);
-
-            localStorage.removeItem("carrito");
-            window.location.href = "index.html";
+            hideLoaderPost();
+            const check = document.getElementById("check");
+            check.classList.remove("hidden");
+            setTimeout(() => {
+                check.classList.add("hidden");
+            }, 2000);
+            setTimeout(() => {
+                localStorage.removeItem("carrito");
+                window.location.href = "index.html";
+            }, 3000);
         });
     }
     renderProductos();

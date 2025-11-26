@@ -15,7 +15,7 @@ window.onload = () => {
         try {
             const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
-            mp = result.data;
+            mp = result;
         } catch (error) {
             console.error("Error al obtener los productos", error);
         }

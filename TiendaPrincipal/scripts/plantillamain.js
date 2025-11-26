@@ -3,7 +3,7 @@ window.onload = () => {
     const params = new URLSearchParams(window.location.search);
     const productosGrid = document.getElementById("productos-grid");
     const categoria = document.querySelector(".categoria");
-    console.log(categoria);
+    //console.log(categoria);
 
     const showLoader = () => { if (loader) loader.classList.remove("hidden"); };
     const hideLoader = () => { if (loader) loader.classList.add("hidden"); };
@@ -13,8 +13,8 @@ window.onload = () => {
         try {
             const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
-            console.log(result.data);
-            mp = result.data;
+            //console.log(result);
+            mp = result;
         } catch (error) {
             console.error("Error al obtener los productos", error);
         }
@@ -33,13 +33,14 @@ window.onload = () => {
         }
 
         function anadirProductoAVista(id) {
-            const infoProducto = productos[id - 1];
+            const infoProducto = productos[id];
+            //console.log(infoProducto);
             const producto = document.createElement("div");
             producto.className = "producto";
             producto.classList.add("scale-in");
 
             const link = document.createElement("a");
-            link.href = "PlantillaProducto.html?id=" + infoProducto.id;
+            link.href = "PlantillaProducto.html?id=" + (id+1);
 
             const img = document.createElement("img");
             img.src = infoProducto.imagen;
@@ -70,9 +71,11 @@ window.onload = () => {
         function construirVista(tipo) {
             productosGrid.innerHTML = "";
             for (let id in productos) {
+                id = parseInt(id);
                 const product = productos[id];
-                if (tipo === product.tipo) {
-                    anadirProductoAVista(product.id);
+                if (tipo === product["tipo"]) {
+                    //console.log(product);
+                    anadirProductoAVista(id);
                 }
             }
         }

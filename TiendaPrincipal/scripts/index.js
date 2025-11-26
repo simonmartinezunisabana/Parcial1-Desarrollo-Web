@@ -15,8 +15,8 @@ window.onload = () => {
         try {
             const response = await fetch("https://parcial1-desarrollo-web-production.up.railway.app/productos");
             const result = await response.json();
-            console.log(result.data);
-            mp = result.data;
+            //console.log(result);
+            mp = result;
         } catch (error) {
             console.error("Error al obtener los productos", error);
         }
@@ -39,7 +39,7 @@ window.onload = () => {
 
             categorias.set(product.tipo, id);
         }
-        console.log(categorias);
+        //console.log(categorias);
 
         let indexCategorias = 0;
         let catalogoSlide = null;
