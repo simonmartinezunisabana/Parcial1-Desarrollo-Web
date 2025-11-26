@@ -13,10 +13,10 @@ window.onload = () => {
     async function getProducts() {
         let mp = null;
         try {
-            const response = await fetch("http://localhost:8080/productos");
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec");
             const result = await response.json();
-            console.log(result);
-            mp = result;
+            console.log(result.data);
+            mp = result.data;
         } catch (error) {
             console.error("Error al obtener los productos", error);
         }
@@ -83,14 +83,15 @@ window.onload = () => {
 
         const form = document.getElementById("form-pedido");
         async function enviarPedido(pedido) {
-            const res = await fetch("http://localhost:8080/pedidos", {
+            const res = await fetch("https://script.google.com/macros/s/AKfycbyxrNFOHXJw8SU3qRFQbPUoq9-X6JWVWIDN5ZRjC_vPPZSlegn_CDUsb9zlkXern9Ew/exec", {
+                redirect: "follow",
                 method: "POST",
                 body: JSON.stringify(pedido),
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "text/plain;charset=utf-8" }
             });
 
             const data = await res.json();
-            console.log("Respuesta:", data);
+            console.log("Respuesta:", data.data);
         };
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -100,26 +101,25 @@ window.onload = () => {
             const productosPedido = [];
 
             for (let id in carrito){
-                id = parseInt(id);
                 const info = productos[id-1];
-                console.log(info);
-                console.log(id);
                 if (info){
                     const cantidad = carrito[id];
 
                     productosPedido.push({
-                        productoId: id,
-                        cantidad: cantidad
-                    });
+                        id,
+                        nombre: info.nombre,
+                        cantidad,
+                        precio: info.precio
+                    })
                 }
             }
 
-            data.productos = productosPedido;
+            data.productosPedido = productosPedido;
             data.total = total;
-            console.log(data);
 
             showLoaderPost();
             await enviarPedido(data);
+            alert("Pedido enviado correctamente");
 
             localStorage.removeItem("carrito");
             window.location.href = "index.html";
