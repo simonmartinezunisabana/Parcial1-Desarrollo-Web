@@ -63,5 +63,5 @@ INSERT INTO productos (id, nombre, precio, imagen, tipo, descripcion) VALUES
 (55, 'Dije Cruz Brillante', 9500, './images/Novedades/dije-cruz-brillante.jpg', 'Dijes', 'Deslumbrante dije en oro de 18k con diseño de cruz de corte brillante. Superficie pulida que refleja la luz intensamente, simbolizando fe y esperanza. Pieza espiritual con máximo brillo, ideal para quienes buscan una expresión de fe radiante y elegante.');
 
 INSERT INTO usuarios (password, username)
-VALUES ('$2a$10$GK0tTTC/MbxDlEJcfqDKTe39Efa1LK6bxcBIbZHT1hhruTwrNNAnC','dragonMaster'),('$2a$10$XPsvO95K5Xy1KjzvV.EZGuKJz7AjP8bbjZ1q7l0sQYxYd.ohP6gR6','mageQueen');
+VALUES ('$2a$10$GK0tTTC/MbxDlEJcfqDKTe39Efa1LK6bxcBIbZHT1hhruTwrNNAnC','simonmaga'),('$2a$10$BobXuNLr5JUe4fnRJ8N4neOMdAG4qUje7gy6g1aNjoyi9XNkTHqry','rafarisa');
 
